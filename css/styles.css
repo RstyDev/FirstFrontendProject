@@ -1,0 +1,273 @@
+.titlebar a {
+    max-width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: block;
+    color: #222222;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: solid;
+    font-size: 35px;
+}
+
+/* The title bar */
+.titlebar {
+    float: left;
+    width: 100%;
+    background-color: #D3D3D3;
+    position: fixed;
+    left: 0;
+    /* Set the navbar to fixed position */
+    top: 0;
+    /* Position the navbar at the top of the page */
+    /* Full width */
+    min-height: 70px;
+    max-height: 130px;
+
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    max-width: 250px;
+    min-width: 80px;
+
+    position: fixed;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: #C0C4DE;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* The rightbar menu */
+.rightnav {
+    height: 100%;
+    /* Full-height: remove this if you want "auto" height */
+    max-width: 250px;
+    min-width: 80px;
+    position: fixed;
+    /* Fixed rightbar (stay in place on scroll) */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    right: 0;
+    background-color: #C0C4DE;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* Style the sidenav links and the dropdown button */
+.rightnav a,
+.sidenav a,
+.dropdown-btn {
+    padding: 15px 8px 15px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #111111;
+    display: block;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Add an active class to the active dropdown button */
+.active {
+    background-color: #87CEFA;
+    color: white;
+}
+
+/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+.dropdown-container {
+    display: none;
+    background-color: #d9d9d9;
+    padding-left: 0px;
+}
+
+.dropdown-container a:hover {
+
+    /* Change the color of links on hover */
+
+    background-color: #e0e0e0;
+    color: black;
+}
+
+/* Style page content */
+.main {
+    margin-left: 20%;
+    margin-right: 23%;
+    /* Same as the width of the sidebar */
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-top: 100px;
+    background-color: #FFFACD;
+    padding-bottom: 90px;
+}
+
+.img {
+    height: 150px;
+    width: 150px;
+    margin-right: 30px;
+    margin-bottom: 30px;
+    border-color: white;
+    border-radius: 10%;
+    float: left;
+}
+
+p {
+    top: 100px;
+    font-size: 4vw;
+}
+
+.icon {
+    float: left;
+    height: 30px;
+    width: 30px;
+    border-radius: 10%;
+    padding-right: 0;
+}
+
+/* On mouse-over */
+.links a:hover,
+.rightnav a:hover,
+.sidenav a:hover,
+.dropdown-btn:hover {
+    color: #606060;
+}
+
+.links div {
+    flex-grow: 1;
+    color: #b0b0b0;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: solid;
+}
+
+.contLink {
+    left: 33%;
+    flex-grow: 1;
+    color: #222;
+    text-align: center;
+    padding-top: 14px;
+    padding-bottom: 16px;
+    padding-right: 35px;
+    text-decoration: solid;
+    font-size: 22px;
+}
+
+.contactbar {
+    left: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    float: left;
+    width: 100%;
+    background-color: #D3D3D3;
+    position: fixed;
+    /* Set the contactbar to fixed position */
+    bottom: 0px;
+    /* Position the contactbar at the bottom of the page */
+    /* Full width */
+    min-height: 70px;
+    max-height: 130px;
+}
+
+.contactlinks {
+    width: 56%;
+    margin-left: 22%;
+    margin-right: 22%;
+}
+
+.links {
+    display: flex;
+    width: 100%;
+}
+
+.links a {
+    padding-left: 0;
+}
+
+/* Todos los media queries */
+@media screen and (max-height: 450px) {
+
+    .sidenav,
+    .rightnav {
+        padding-top: 15px;
+    }
+
+    .sidenav a,
+    .rightnav a {
+        font-size: 17px;
+    }
+
+    p {
+        margin-top: 0px;
+    }
+
+    .img {
+        padding: 0;
+        margin-bottom: 0px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .main {
+        margin-top: 140px;
+    }
+
+    .links div {
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main {
+        top: 20px;
+    }
+
+    .img {
+        float: none;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .main {
+        padding-top: 20px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .titlebar a {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .dropdown-btn div {
+        display: none;
+    }
+
+    .icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .links a {
+        display: none;
+    }
+}
