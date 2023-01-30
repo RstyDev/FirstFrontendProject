@@ -10,7 +10,7 @@
     font-size: 35px;
 }
 
-/* The title bar */
+/* Titulo */
 .titlebar {
     float: left;
     width: 100%;
@@ -26,7 +26,7 @@
 
 }
 
-/* The sidebar menu */
+/* Barra izq */
 .sidenav {
     height: 100%;
     /* Full-height: remove this if you want "auto" height */
@@ -47,7 +47,7 @@
     padding-top: 20px;
 }
 
-/* The rightbar menu */
+/* Barra der */
 .rightnav {
     height: 100%;
     /* Full-height: remove this if you want "auto" height */
@@ -67,7 +67,6 @@
     padding-top: 20px;
 }
 
-/* Style the sidenav links and the dropdown button */
 .rightnav a,
 .sidenav a,
 .dropdown-btn {
@@ -84,13 +83,13 @@
     outline: none;
 }
 
-/* Add an active class to the active dropdown button */
+/* Clase active, boton seleccionado */
 .active {
     background-color: #87CEFA;
     color: white;
 }
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+
 .dropdown-container {
     display: none;
     background-color: #d9d9d9;
@@ -99,21 +98,16 @@
 
 .dropdown-container a:hover {
 
-    /* Change the color of links on hover */
-
     background-color: #e0e0e0;
     color: black;
 }
 
-/* Style page content */
 .main {
     margin-left: 20%;
     margin-right: 23%;
-    /* Same as the width of the sidebar */
     padding-right: 30px;
     padding-left: 30px;
     margin-top: 100px;
-    background-color: #FFFACD;
     padding-bottom: 90px;
 }
 
@@ -140,7 +134,7 @@ p {
     padding-right: 0;
 }
 
-/* On mouse-over */
+/* En mouse-over */
 .links a:hover,
 .rightnav a:hover,
 .sidenav a:hover,
@@ -176,10 +170,9 @@ p {
     width: 100%;
     background-color: #D3D3D3;
     position: fixed;
-    /* Set the contactbar to fixed position */
     bottom: 0px;
-    /* Position the contactbar at the bottom of the page */
-    /* Full width */
+    /* Contactbar al fondo */
+    /* Todo el largo */
     min-height: 70px;
     max-height: 130px;
 }
