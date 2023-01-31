@@ -32,7 +32,7 @@ document.getElementById('cual2').innerHTML = obj.cual2
 
 document.getElementById('cual3').innerHTML = obj.cual3
 
-document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.nacionalidad + " el día " + obj.dia + " de " + obj.mes + " del año " + obj.anio + ".";
+document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " de " + obj.mes + " del año " + obj.anio + ".";
 
 document.getElementById('exp1').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = "Entre los años " + obj.anioTrabajo1 + " desempeñé tareas de " + obj.exp1 + ".";
@@ -96,4 +96,25 @@ document.getElementById('cual3').addEventListener("click", function () {
 
 function imgclick() {
     document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " de " + obj.mes + " del año " + obj.anio + ".";
+
+    var objx;
+    var xhr = new XMLHttpRequest();
+    var url = 'https://randomuser.me/api/';
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            objx = this.response;
+            console.log(this.responseText);
+            console.log(objx);
+        }
+    }
+    xhr.send();
+
+    // $.ajax({
+    //     url: 'https://randomuser.me/api/',
+    //     dataType: 'json',
+    //     success: function (data) {
+    //         console.log(data);
+    //     }
+    // })
 }
