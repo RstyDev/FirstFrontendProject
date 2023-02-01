@@ -154,12 +154,16 @@ p {
 .contLink {
     left: 33%;
     flex-grow: 1;
-    color: #222;
-    text-align: center;
     padding-top: 14px;
     padding-bottom: 16px;
     padding-right: 35px;
-    text-decoration: solid;
+
+
+}
+
+.linkText {
+    text-decoration: none;
+    color: #222;
     font-size: 22px;
 }
 
@@ -261,7 +265,12 @@ p {
 }
 
 @media screen and (max-width: 980px) {
-    .links a {
+    /* .links a {
+
+        content-visibility: none;
+    } */
+
+    .linkText {
         display: none;
     }
 }

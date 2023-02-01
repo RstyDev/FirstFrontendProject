@@ -14,6 +14,23 @@ for (i = 0; i < dropdown.length; i++) {
     });
 }
 
+var inContLink = document.getElementsByClassName("inContainerLink");
+
+for (i = 0; i < inContLink.length; i++) {
+    inContLink[i].addEventListener("click", function () {
+        var dropdownContent = this.parentElement;
+        for (var j = 0; j < dropdown.length; j++) {
+            dropdown[j].classList.remove("active");
+        }
+        if (dropdownContent.style.display === "block") {
+            dropdownContent.style.display = "none";
+        } else {
+            dropdownContent.style.display = "block";
+        }
+    });
+}
+
+
 
 
 const persona = '{"nombre":"Pedro","apellido":"Alvarez","ciudad":"La Plata","provincia":"Buenos Aires","pais":"Argentina","dni":"35.648.145","anio":"1980","mes":"febrero","dia":"28","celu":"(11)11111111","email":"algunpedroalvarez@gmail.com","estudioSec":"Estudios secundarios completos en la E.E.S.T. N°8 Juan Bautista Alberdi","estudioUniv":"Cursando Analista Programador Universitario en la Universidad Nacional de La Plata","cursos":"Realizado el curso Primeros pasos del desarrollo Frontend en Ticmas Academy","idioma1":"español","idioma2":"inglés","idioma3":"japonés","cual1":"Trabajo en equipo","trabajoEquipo":"Me considero y se me ha reconocido como una persona que contribuye activamente al buen ambiente laboral y a la cooperación mutua entre compañeros. Siempre dispuesto a ayudar a quien lo necesite","cual2":"Liderazgo","liderazgo":"Reacciono eficientemente en situaciones de presión en las que hay que tomar desiciones considerando las repercusiones a futuro, principalmente para la empresa","cual3":"Atención","atencion":"Tras varios años de trabajar en atención al público, he desarrollado una capacidad para mediar en situaciones difíciles con clientes logrando mantener una relación de buenos términos con la empresa y sus empleados, sin perder de vista los intereses de la misma","anioTrabajo1":"2010-2013","exp1":"atención al público y caja en Supermercado Argenchino. Referencias: 11xxxxxxxx","anioTrabajo2":"2013-2015","exp2":"gerente de ventas en Maxiconsumo S.A. Referencias: 11xxxxxxxx","anioTrabajo3":"2015-2020","exp3":"gerente de ventas en Nini Mayorista. Referencias: 11xxxxxxxx"}';
