@@ -1,4 +1,39 @@
 //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+
+var objx;
+var xhr = new XMLHttpRequest();
+var url = 'https://randomuser.me/api/';
+xhr.open("GET", url, true);
+xhr.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        objx = JSON.parse(this.responseText);
+        console.log(this.responseText);
+        console.log(objx);
+        var name = objx.results[0].name.first;
+        console.log(objx.results[0].name.first);
+        obj.nombre = objx.results[0].name.first;
+
+        document.getElementById('parrafo').innerHTML = "Mi nombre es " + objx.results[0].name.first + " " + objx.results[0].name.last + ", nacido en " + objx.results[0].location.country + " en fecha " + objx.results[0].dob.date + ".";
+
+        document.getElementById('quienSoy').addEventListener("click", function () {
+            document.getElementById('parrafo').innerHTML = "Mi nombre es " + objx.results[0].name.first + " " + objx.results[0].name.last + " y mi DNI es: " + obj.dni + ".";;
+        });
+        var img = document.createElement("img");
+        img.src = objx.results[0].picture.large;
+        var src = document.getElementById("profile");
+        img.onload = function () {
+            img.height = 150;
+            img.width = 150;
+            img.style.borderRadius = "10%";
+
+        };
+        src.appendChild(img);
+
+
+    }
+}
+xhr.send();
+
 var dropdown = document.getElementsByClassName("dropdown-btn");
 var i;
 
@@ -49,7 +84,7 @@ document.getElementById('cual2').innerHTML = obj.cual2
 
 document.getElementById('cual3').innerHTML = obj.cual3
 
-document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " de " + obj.mes + " del año " + obj.anio + ".";
+
 
 document.getElementById('exp1').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = "Entre los años " + obj.anioTrabajo1 + " desempeñé tareas de " + obj.exp1 + ".";
@@ -87,17 +122,13 @@ document.getElementById('entiendo').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = "Entiendo y estoy aprendiendo el " + obj.idioma3 + ".";
 });
 
-document.getElementById('quienSoy').addEventListener("click", function () {
-    document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
-});
+
 
 document.getElementById('naci').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = "Nací el " + obj.dia + " de " + obj.mes + " del año " + obj.anio + " en " + obj.ciudad + ", " + obj.provincia + ", " + obj.pais + ".";
 });
 
-document.getElementById('datosContacto').addEventListener("click", function () {
-    document.getElementById('parrafo').innerHTML = "Mi número de teléfono celular es: " + obj.celu + ". Mi email es: " + obj.email + ".";
-});
+
 
 document.getElementById('cual1').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = obj.trabajoEquipo + ".";
@@ -111,27 +142,12 @@ document.getElementById('cual3').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = obj.atencion + ".";
 });
 
+
+
+
+
 function imgclick() {
     document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " de " + obj.mes + " del año " + obj.anio + ".";
 
-    var objx;
-    var xhr = new XMLHttpRequest();
-    var url = 'https://randomuser.me/api/';
-    xhr.open("GET", url, true);
-    xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            objx = this.response;
-            console.log(this.responseText);
-            console.log(objx);
-        }
-    }
-    xhr.send();
 
-    // $.ajax({
-    //     url: 'https://randomuser.me/api/',
-    //     dataType: 'json',
-    //     success: function (data) {
-    //         console.log(data);
-    //     }
-    // })
 }

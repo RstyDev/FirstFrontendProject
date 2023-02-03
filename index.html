@@ -66,7 +66,7 @@
             <div class="dropdown-container">
                 <a class="inContainerLink" id="quienSoy">Quién soy</a>
                 <a class="inContainerLink" id="naci">Cuándo y dónde nací</a>
-                <a class="inContainerLink" id="datosContacto">Datos de contacto</a>
+
             </div>
             <button title="Cualidades Destacables" class="dropdown-btn">
                 <i class="fa-solid fa-thumbs-up"></i>
@@ -86,7 +86,8 @@
         <div class="contactlinks">
             <div class="links">
                 <div class="contLink">
-                    <a href="https://wa.me/1XXXXXXXXXX" target="_blank" title="Enviar mensaje por WhatsApp">
+                    <a class="link" href="https://wa.me/1XXXXXXXXXX" target="_blank"
+                        title="Enviar mensaje por WhatsApp">
                         <img class="icon" src="images/wspIcongrey.png" alt="whatsapp icon">
                         <!-- El link va directamente a enviar WhatsApp, en éste caso a un numero inexistente -->
                         <a class="linkText" href="https://wa.me/1XXXXXXXXXX" target="_blank"
@@ -96,17 +97,18 @@
                     </a>
                 </div>
                 <div class="contLink">
-                    <a href="https://linkedin.com/in/algunpedroalvarez" target="_blank" title="Perfil de LinkedIn">
+                    <a class="link" href="https://linkedin.com/in/unapersonax" target="_blank"
+                        title="Perfil de LinkedIn">
                         <img class="icon" src="images/LinkedIngrey.png" alt="linkedin icon">
                         <!-- El link va directamente al perfil de linkedin, en éste caso a un perfil inexistente -->
-                        <a class="linkText" href="https://linkedin.com/in/algunpedroalvarez" target="_blank"
+                        <a class="linkText" href="https://linkedin.com/in/unapersonax" target="_blank"
                             title="Perfil de LinkedIn">
                             LinkedIn
                         </a>
                     </a>
                 </div>
                 <div class="contlink">
-                    <a href="https://t.me/unpedroalvarez" target="_blank" title="Enviar mensaje por Telegram">
+                    <a class="link" href="https://t.me/unapersonax" target="_blank" title="Enviar mensaje por Telegram">
                         <img class="icon" src="images/telegramgrey.png" alt="telegram icon">
                         <!-- El link va directamente a enviar a Telegram, en éste caso a un perfil inexistente -->
                         <a class="linkText" href="https://t.me/unpedroalvarez" target="_blank"
@@ -115,12 +117,24 @@
                         </a>
                     </a>
                 </div>
+                <div class="contlink">
+                    <a class="link" href="mailto:lucase.igarzabal@gmail.com" target="_blank"
+                        title="Enviar mensaje por E-mail">
+                        <img class="icon" src="images/telegramgrey.png" alt="telegram icon">
+                        <!-- El link va directamente a enviar a Telegram, en éste caso a un perfil inexistente -->
+                        <a class="linkText" href="mailto:lucase.igarzabal@gmail.com" target="_blank"
+                            title="Enviar mensaje por Telegram">
+                            E-mail
+                        </a>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
     <!-- Main -->
     <div class="main">
-        <img src="images/24.jpg" alt="Profile picture" class="img" onclick="imgclick()">
+        <div id="profile">
+        </div>
         <p id="parrafo">
         </p>
     </div>

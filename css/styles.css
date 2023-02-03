@@ -97,7 +97,6 @@
 }
 
 .dropdown-container a:hover {
-
     background-color: #e0e0e0;
     color: black;
 }
@@ -111,11 +110,12 @@
     padding-bottom: 90px;
 }
 
-.img {
-    height: 150px;
-    width: 150px;
+#profile img {
     margin-right: 30px;
     margin-bottom: 30px;
+}
+
+img {
     border-color: white;
     border-radius: 10%;
     float: left;
@@ -127,12 +127,13 @@ p {
     font-size: 3.5vw;
 }
 
-.icon {
+.link img {
     float: left;
-    height: 30px;
-    width: 30px;
+    height: 50px;
+    width: 50px;
     border-radius: 10%;
-    padding-right: 0;
+    padding-right: 10px;
+    padding-bottom: 0;
 }
 
 /* En mouse-over */
@@ -152,6 +153,7 @@ p {
 }
 
 .contLink {
+
     left: 33%;
     flex-grow: 1;
     padding-top: 14px;
@@ -162,9 +164,11 @@ p {
 }
 
 .linkText {
+    float: left;
     text-decoration: none;
     color: #222;
     font-size: 22px;
+    padding-top: 15px;
 }
 
 .contactbar {
@@ -183,9 +187,9 @@ p {
 }
 
 .contactlinks {
-    width: 56%;
-    margin-left: 22%;
-    margin-right: 22%;
+    width: 64%;
+    margin-left: 16.5%;
+    margin-right: 29.5%;
 }
 
 .links {
@@ -214,7 +218,7 @@ p {
         margin-top: 0px;
     }
 
-    .img {
+    #profile {
         padding: 0;
         margin-bottom: 0px;
     }
@@ -225,7 +229,7 @@ p {
         margin-top: 140px;
     }
 
-    .links div {
+    .link img {
         padding-right: 0;
         padding-bottom: 0;
     }
@@ -236,7 +240,7 @@ p {
         top: 20px;
     }
 
-    .img {
+    #profile {
         float: none;
     }
 }
@@ -258,17 +262,14 @@ p {
         display: none;
     }
 
-    .icon {
+    .link img {
         width: 50px;
         height: 50px;
     }
 }
 
 @media screen and (max-width: 980px) {
-    /* .links a {
 
-        content-visibility: none;
-    } */
 
     .linkText {
         display: none;
