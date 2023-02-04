@@ -69,7 +69,8 @@
 
 .rightnav a,
 .sidenav a,
-.dropdown-btn {
+.dropdown-btn,
+.popup-btn {
     padding: 15px 8px 15px 16px;
     text-decoration: none;
     font-size: 20px;
@@ -90,12 +91,14 @@
 }
 
 
-.dropdown-container {
+.dropdown-container,
+.popup-container {
     display: none;
     background-color: #d9d9d9;
     padding-left: 0px;
 }
 
+.popup-container a:hover,
 .dropdown-container a:hover {
     background-color: #e0e0e0;
     color: black;
@@ -116,7 +119,6 @@
 }
 
 img {
-    border-color: white;
     border-radius: 10%;
     float: left;
 }
@@ -129,8 +131,8 @@ p {
 
 .link img {
     float: left;
-    height: 50px;
-    width: 50px;
+    height: 30px;
+    width: 30px;
     border-radius: 10%;
     padding-right: 10px;
     padding-bottom: 0;
@@ -167,8 +169,8 @@ p {
     float: left;
     text-decoration: none;
     color: #222;
-    font-size: 22px;
-    padding-top: 15px;
+    font-size: 18px;
+    padding-top: 11px;
 }
 
 .contactbar {
@@ -187,9 +189,9 @@ p {
 }
 
 .contactlinks {
-    width: 64%;
-    margin-left: 16.5%;
-    margin-right: 29.5%;
+    width: 58%;
+    margin-left: 19.5%;
+    margin-right: 22.5%;
 }
 
 .links {
@@ -200,6 +202,51 @@ p {
 .links a {
     padding-left: 0;
 }
+
+.popup-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.popup-btn {
+    display: none;
+}
+
+.popup-container .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
+}
+
+.popup-container .popuptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+
+.popup-container .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s
+}
+
+
+
 
 /* Todos los media queries */
 @media screen and (max-height: 450px) {
@@ -229,10 +276,7 @@ p {
         margin-top: 140px;
     }
 
-    .link img {
-        padding-right: 0;
-        padding-bottom: 0;
-    }
+
 }
 
 @media screen and (max-width: 600px) {
@@ -243,6 +287,21 @@ p {
     #profile {
         float: none;
     }
+
+    .link img {
+        height: 10px;
+        width: 10px;
+    }
+
+    .links {
+        display: none;
+    }
+
+    .popup-btn {
+        display: block;
+    }
+
+
 }
 
 @media screen and (max-width: 680px) {
@@ -257,7 +316,9 @@ p {
     }
 }
 
-@media screen and (max-width: 900px) {
+
+
+@media screen and (max-width: 980px) {
     .dropdown-btn div {
         display: none;
     }
@@ -266,10 +327,6 @@ p {
         width: 50px;
         height: 50px;
     }
-}
-
-@media screen and (max-width: 980px) {
-
 
     .linkText {
         display: none;

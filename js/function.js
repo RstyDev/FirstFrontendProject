@@ -13,11 +13,12 @@ xhr.onreadystatechange = function () {
         console.log(objx.results[0].name.first);
         obj.nombre = objx.results[0].name.first;
 
-        document.getElementById('parrafo').innerHTML = "Mi nombre es " + objx.results[0].name.first + " " + objx.results[0].name.last + ", nacido en " + objx.results[0].location.country + " en fecha " + objx.results[0].dob.date + ".";
+        document.getElementById('parrafo').innerHTML = "Mi nombre es " + objx.results[0].name.first + " " + objx.results[0].name.last + ", nacido/a en " + objx.results[0].location.country + " en fecha " + objx.results[0].dob.date + ".";
 
         document.getElementById('quienSoy').addEventListener("click", function () {
             document.getElementById('parrafo').innerHTML = "Mi nombre es " + objx.results[0].name.first + " " + objx.results[0].name.last + " y mi DNI es: " + obj.dni + ".";;
         });
+
         var img = document.createElement("img");
         img.src = objx.results[0].picture.large;
         var src = document.getElementById("profile");
@@ -49,6 +50,20 @@ for (i = 0; i < dropdown.length; i++) {
     });
 }
 
+// var popup = document.getElementsByClassName("popup-btn");
+// var k;
+// for (j = 0; j < popup.length; j++) {
+//     popup[j].addEventListener("click", function () {
+//         this.classList.toggle("active");
+//         var popupContent = this.previousElementSibling;
+//         if (popupContent.style.display === "block") {
+//             popupContent.style.display = "none";
+//         } else {
+//             popup.style.display = "block";
+//         }
+//     });
+// }
+
 var inContLink = document.getElementsByClassName("inContainerLink");
 
 for (i = 0; i < inContLink.length; i++) {
@@ -56,15 +71,25 @@ for (i = 0; i < inContLink.length; i++) {
         var dropdownContent = this.parentElement;
         for (var j = 0; j < dropdown.length; j++) {
             dropdown[j].classList.remove("active");
+            // popup[j].classList.remove("active");
         }
         if (dropdownContent.style.display === "block") {
             dropdownContent.style.display = "none";
         } else {
             dropdownContent.style.display = "block";
         }
+        // if (popupContent.style.display === "block") {
+        //     popupContent.style.display = "none";
+        // } else {
+        //     popupContent.style.display = "block";
+        // }
     });
 }
 
+function myFunction() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}
 
 
 
@@ -83,6 +108,25 @@ document.getElementById('cual1').innerHTML = obj.cual1
 document.getElementById('cual2').innerHTML = obj.cual2
 
 document.getElementById('cual3').innerHTML = obj.cual3
+
+//para usar si no se usa el ajax
+
+// document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el " + obj.dia + " de " + obj.mes + " del " + obj.anio + ".";
+
+// document.getElementById('quienSoy').addEventListener("click", function () {
+//     document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
+// });
+
+// var img = document.createElement("img");
+// img.src = "images/24.jpg";
+// var src = document.getElementById("profile");
+// img.onload = function () {
+//     img.height = 150;
+//     img.width = 150;
+//     img.style.borderRadius = "10%";
+
+// };
+// src.appendChild(img);
 
 
 
