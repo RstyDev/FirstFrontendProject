@@ -21,7 +21,7 @@
         <div class="sidenav">
             <button title="Experiencia Laboral" class="dropdown-btn">
                 <i class="fa-solid fa-briefcase"></i>
-                <div>Experiencia Laboral</div>
+                <span>Experiencia Laboral</span>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
@@ -31,7 +31,7 @@
             </div>
             <button title="Formación" class="dropdown-btn">
                 <i class="fa-solid fa-pen-nib"></i>
-                <div>Formación</div>
+                <span>Formación</span>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
@@ -41,7 +41,7 @@
             </div>
             <button title="Idiomas" class="dropdown-btn">
                 <i class="fa-solid fa-earth-americas"></i>
-                <div>Idiomas</div>
+                <span>Idiomas</span>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
@@ -60,7 +60,7 @@
         <div class="rightnav">
             <button title="Datos Personales" class="dropdown-btn">
                 <i class="fa-solid fa-id-card"></i>
-                <div> Datos Personales </div>
+                <span> Datos Personales </span>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
@@ -69,7 +69,7 @@
             </div>
             <button title="Cualidades Destacables" class="dropdown-btn">
                 <i class="fa-solid fa-thumbs-up"></i>
-                <div>Cualidades Destacables</div>
+                <span>Cualidades Destacables</span>
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-container">
@@ -77,7 +77,6 @@
                 <a class="inContainerLink" id="cual2">Liderazgo</a>
                 <a class="inContainerLink" id="cual3">Actitud</a>
             </div>
-            <!-- <a href="#">About</a> -->
         </div>
     </div>
     <!-- Contact Bar -->
@@ -85,11 +84,11 @@
         <div class="contactlinks">
             <div class="links">
                 <div class="contLink">
-                    <a class="link" href="https://wa.me/1XXXXXXXXXX" target="_blank"
+                    <a id="wsp" class="link" href="https://wa.me/1XXXXXXXXXX" target="_blank"
                         title="Enviar mensaje por WhatsApp">
                         <img class="icon" src="images/wspIcongrey.png" alt="whatsapp icon">
                         <!-- El link va directamente a enviar WhatsApp, en éste caso a un numero inexistente -->
-                        <a class="linkText" href="https://wa.me/1XXXXXXXXXX" target="_blank"
+                        <a id="wsp2" class="linkText" href="https://wa.me/1XXXXXXXXXX" target="_blank"
                             title="Enviar mensaje por WhatsApp">
                             WhatsApp
                         </a>
@@ -117,31 +116,44 @@
                     </a>
                 </div>
                 <div class="contlink">
-                    <a class="link" href="mailto:lucase.igarzabal@gmail.com" target="_blank"
-                        title="Enviar mensaje por E-mail">
-                        <img class="icon" src="images/mailicon.png" alt="telegram icon">
+                    <a id="mail" class="link" href="mailto:algunpedroalvarez@gmail.com" target="_blank"
+                        title="Enviar correo electrónico">
+                        <img class="icon" src="images/mailicon.png" alt="mail icon">
                         <!-- El link va directamente a enviar a Telegram, en éste caso a un perfil inexistente -->
-                        <a class="linkText" href="mailto:lucase.igarzabal@gmail.com" target="_blank"
-                            title="Enviar mensaje por Telegram">
+                        <a id="mail2" class="linkText" href="mailto:algunpedroalvarez@gmail.com" target="_blank"
+                            title="Enviar correo electrónico">
                             E-mail
                         </a>
                     </a>
                 </div>
             </div>
-            <div class="popup-container" onclick="myFunction()">
-                <span class="popuptext" id="myPopup">Popup text...</span>
-            </div>
-            <button title="Datos Personales" class="popup-btn">
+        </div>
+        <div class="popupBox">
+            <button title="Contacto" id="popupBtn" class="popup-btn">
                 <i class="fa-solid fa-bars"></i>
-                <div> Contacto </div>
+                <span> Contacto </span>
                 <i class="fa fa-caret-down"></i>
             </button>
+            <div class="popup-container">
+                <a id="wsp3" class="linkpeq" href="https://wa.me/1XXXXXXXXXX" target="_blank"
+                    title="Enviar mensaje por WhatsApp">
+                    <img class="icon" src="images/wspIcongrey.png" alt="whatsapp icon"></a>
+                <a class="linkpeq" href="https://linkedin.com/in/unapersonax" target="_blank"
+                    title="Perfil de LinkedIn">
+                    <img class="icon" src="images/LinkedIngrey.png" alt="linkedin icon"></a>
+                <a class="linkpeq" href="https://t.me/unapersonax" target="_blank" title="Enviar mensaje por Telegram">
+                    <img class="icon" src="images/telegramgrey.png" alt="telegram icon"></a>
+                <a id="mail3" class="linkpeq" href="mailto:algunpedroalvarez@gmail.com" target="_blank"
+                    title="Enviar mensaje por E-mail">
+                    <img class="icon" src="images/mailicon.png" alt="mail icon"></a>
+            </div>
         </div>
+    </div>
     </div>
     <!-- Main -->
     <div class="main">
-        <div id="profile">
-        </div>
+        <a id="profile">
+        </a>
         <p id="parrafo">
         </p>
     </div>
