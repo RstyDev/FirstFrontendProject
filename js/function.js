@@ -1,8 +1,9 @@
 //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 
-let persona = '{"nombre":"Pedro","apellido":"Alvarez","ciudad":"La Plata","provincia":"Buenos Aires","pais":"Argentina","dni":"35.648.145","anio":"1980","mes":"febrero","dia":"28","celu":"(11)11111111","email":"algunpedroalvarez@gmail.com","estudioSec":"Estudios secundarios completos en la E.E.S.T. N°8 Juan Bautista Alberdi","estudioUniv":"Cursando Analista Programador Universitario en la Universidad Nacional de La Plata","cursos":"Realizado el curso Primeros pasos del desarrollo Frontend en Ticmas Academy","idioma1":"español","idioma2":"inglés","idioma3":"japonés","cual1":"Trabajo en equipo","trabajoEquipo":"Me considero y se me ha reconocido como una persona que contribuye activamente al buen ambiente laboral y a la cooperación mutua entre compañeros. Siempre dispuesto a ayudar a quien lo necesite","cual2":"Liderazgo","liderazgo":"Reacciono eficientemente en situaciones de presión en las que hay que tomar desiciones considerando las repercusiones a futuro, principalmente para la empresa","cual3":"Atención","atencion":"Tras varios años de trabajar en atención al público, he desarrollado una capacidad para mediar en situaciones difíciles con clientes logrando mantener una relación de buenos términos con la empresa y sus empleados, sin perder de vista los intereses de la misma","anioTrabajo1":"2010-2013","exp1":"atención al público y caja en Supermercado Argenchino. Referencias: 11xxxxxxxx","anioTrabajo2":"2013-2015","exp2":"gerente de ventas en Maxiconsumo S.A. Referencias: 11xxxxxxxx","anioTrabajo3":"2015-2020","exp3":"gerente de ventas en Nini Mayorista. Referencias: 11xxxxxxxx"}';
-
+let persona = '{"nombre":"Pedro","apellido":"Alvarez","calle":"49","numero":"332","ciudad":"La Plata","provincia":"Buenos Aires","pais":"Argentina","dni":"35.648.145","anio":"1980","mes":"febrero","dia":"28","celu":"(11)11111111","email":"algunpedroalvarez@gmail.com","estudioSec":"Estudios secundarios completos en la E.E.S.T. N°8 Juan Bautista Alberdi","estudioUniv":"Cursando Analista Programador Universitario en la Universidad Nacional de La Plata","cursos":"Realizado el curso Primeros pasos del desarrollo Frontend en Ticmas Academy","idioma1":"español","idioma2":"inglés","idioma3":"japonés","cual1":"Trabajo en equipo","trabajoEquipo":"Me considero y se me ha reconocido como una persona que contribuye activamente al buen ambiente laboral y a la cooperación mutua entre compañeros. Siempre dispuesto a ayudar a quien lo necesite","cual2":"Liderazgo","liderazgo":"Reacciono eficientemente en situaciones de presión en las que hay que tomar desiciones considerando las repercusiones a futuro, principalmente para la empresa","cual3":"Atención","atencion":"Tras varios años de trabajar en atención al público, he desarrollado una capacidad para mediar en situaciones difíciles con clientes logrando mantener una relación de buenos términos con la empresa y sus empleados, sin perder de vista los intereses de la misma","anioTrabajo1":"2010-2013","exp1":"atención al público y caja en Supermercado Argenchino. Referencias: 11xxxxxxxx","anioTrabajo2":"2013-2015","exp2":"gerente de ventas en Maxiconsumo S.A. Referencias: 11xxxxxxxx","anioTrabajo3":"2015-2020","exp3":"gerente de ventas en Nini Mayorista. Referencias: 11xxxxxxxx"}';
+const obj = JSON.parse(persona);
 var objx;
+var fecha;
 var xhr = new XMLHttpRequest();
 var url = 'https://randomuser.me/api/';
 xhr.open("GET", url, true);
@@ -18,18 +19,32 @@ xhr.onreadystatechange = function () {
         obj.provincia = objx.results[0].location.state;
         obj.dni = objx.results[0].id.value;
         obj.fecha = objx.results[0].dob.date;
+        fecha = new String(obj.fecha);
+        fecha = fecha.split('T');
+        fecha = fecha[0].split('-');
+        obj.anio = fecha[0];
+        obj.mes = fecha[1];
+        obj.dia = fecha[2];
         obj.celu = objx.results[0].cell;
         obj.email = objx.results[0].email;
+        obj.calle = objx.results[0].location.street.name;
+        obj.numero = objx.results[0].location.street.number;
+        if (objx.results[0].gender === "male") {
+            document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
+        } else {
+            document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacida en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
+        }
         document.getElementById("wsp").href = ("https://wa.me/" + obj.celu);
         document.getElementById("wsp2").href = ("https://wa.me/" + obj.celu);
         document.getElementById("wsp3").href = ("https://wa.me/" + obj.celu);
         document.getElementById("mail").href = ("mailto:" + obj.email);
         document.getElementById("mail2").href = ("mailto:" + obj.email);
         document.getElementById("mail3").href = ("mailto:" + obj.email);
-        document.getElementById('parrafo').innerHTML = "Mi nombre es " + objx.results[0].name.first + " " + objx.results[0].name.last + ", nacido/a en " + objx.results[0].location.country + " en fecha " + objx.results[0].dob.date + ".";
 
-        document.getElementById('quienSoy').addEventListener("click", function () {
-            document.getElementById('parrafo').innerHTML = "Mi nombre es " + objx.results[0].name.first + " " + objx.results[0].name.last + " y mi DNI es: " + obj.dni + ".";;
+
+
+        document.getElementById('dondeVivo').addEventListener("click", function () {
+            document.getElementById('parrafo').innerHTML = "Vivo en calle " + objx.results[0].location.street.name + " número " + objx.results[0].location.street.number + " ciudad de " + objx.results[0].location.city + ", " + objx.results[0].location.state + ", " + objx.results[0].location.country + ".";
         });
 
         var img = document.createElement("img");
@@ -43,7 +58,7 @@ xhr.onreadystatechange = function () {
         src.appendChild(img);
     }
     document.getElementById('profile').addEventListener("click", function () {
-        document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " de " + obj.mes + " del año " + obj.anio + ".";
+        document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
     })
 }
 xhr.send();
@@ -108,6 +123,9 @@ for (i = 0; i < inLinkPeq.length; i++) {
     });
 }
 
+document.getElementById('quienSoy').addEventListener("click", function () {
+    document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
+});
 
 
 
@@ -119,9 +137,8 @@ for (i = 0; i < inLinkPeq.length; i++) {
 
 
 
-const obj = JSON.parse(persona);
-console.log(obj);
-console.log(obj.celu)
+
+
 
 
 
