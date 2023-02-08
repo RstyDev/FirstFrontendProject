@@ -10,8 +10,6 @@ xhr.open("GET", url, true);
 xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         objx = JSON.parse(this.responseText);
-        console.log(this.responseText);
-        console.log(objx);
         obj.nombre = objx.results[0].name.first;
         obj.apellido = objx.results[0].name.last;
         obj.pais = objx.results[0].location.country;
@@ -40,13 +38,14 @@ xhr.onreadystatechange = function () {
         document.getElementById("mail").href = ("mailto:" + obj.email);
         document.getElementById("mail2").href = ("mailto:" + obj.email);
         document.getElementById("mail3").href = ("mailto:" + obj.email);
-        document.getElementById("tlgrm").href = ("https://t.me/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-        document.getElementById("tlgrm2").href = ("https://t.me/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-        document.getElementById("tlgrm3").href = ("https://t.me/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-        document.getElementById("lkdn").href = ("https://linkedin.com/in/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-        document.getElementById("lkdn2").href = ("https://linkedin.com/in/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-        document.getElementById("lkdn3").href = ("https://linkedin.com/in/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-
+        document.getElementById("tlgrm").href = ("https://t.me/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("tlgrm2").href = ("https://t.me/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("tlgrm3").href = ("https://t.me/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("lkdn").href = ("https://linkedin.com/in/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("lkdn2").href = ("https://linkedin.com/in/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("lkdn3").href = ("https://linkedin.com/in/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        console.log(objx.results[0].name.first);
+        console.log(obj.nombre);
 
 
 
@@ -64,9 +63,15 @@ xhr.onreadystatechange = function () {
         };
         src.appendChild(img);
     }
+    document.getElementById('naci').addEventListener("click", function () {
+        document.getElementById('parrafo').innerHTML = "Nací el " + obj.dia + " de " + obj.mes + " del año " + obj.anio + " en " + obj.ciudad + ", " + obj.provincia + ", " + obj.pais + ".";
+    });
     document.getElementById('profile').addEventListener("click", function () {
         document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
     })
+    document.getElementById('quienSoy').addEventListener("click", function () {
+        document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
+    });
 }
 xhr.send();
 
@@ -130,9 +135,8 @@ for (i = 0; i < inLinkPeq.length; i++) {
     });
 }
 
-document.getElementById('quienSoy').addEventListener("click", function () {
-    document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
-});
+
+
 
 
 
@@ -220,9 +224,7 @@ document.getElementById('entiendo').addEventListener("click", function () {
 
 
 
-document.getElementById('naci').addEventListener("click", function () {
-    document.getElementById('parrafo').innerHTML = "Nací el " + obj.dia + " de " + obj.mes + " del año " + obj.anio + " en " + obj.ciudad + ", " + obj.provincia + ", " + obj.pais + ".";
-});
+
 
 
 
