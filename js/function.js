@@ -40,6 +40,13 @@ xhr.onreadystatechange = function () {
         document.getElementById("mail").href = ("mailto:" + obj.email);
         document.getElementById("mail2").href = ("mailto:" + obj.email);
         document.getElementById("mail3").href = ("mailto:" + obj.email);
+        document.getElementById("tlgrm").href = ("https://t.me/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("tlgrm2").href = ("https://t.me/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("tlgrm3").href = ("https://t.me/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("lkdn").href = ("https://linkedin.com/in/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("lkdn2").href = ("https://linkedin.com/in/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+        document.getElementById("lkdn3").href = ("https://linkedin.com/in/" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
+
 
 
 
