@@ -32,21 +32,64 @@ xhr.onreadystatechange = function () {
         } else {
             document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacida en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
         }
-        document.getElementById("wsp").href = ("https://wa.me/" + obj.celu);
-        document.getElementById("wsp2").href = ("https://wa.me/" + obj.celu);
+        document.getElementById("wsp").addEventListener("click", wsplink);
+        function wsplink() {
+            window.open("https://wa.me/" + obj.celu, '_blank');
+        }
+        document.getElementById("mail").addEventListener("click", maillink);
+        function maillink() {
+            window.open("mailto:" + obj.email, '_blank');
+        }
+        document.getElementById("tlgrm").addEventListener("click", tlgrmlink);
+        function tlgrmlink() {
+            window.open("https://t.me/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase(), '_blank');
+        }
+        document.getElementById("lkdn").addEventListener("click", lkdnlink);
+        function lkdnlink() {
+            window.open("https://linkedin.com/in/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase(), '_blank');
+        }
+        document.getElementById("wsp").addEventListener("mouseover", function () {
+            document.getElementById("wspicon").style.display = 'none';
+            document.getElementById("wspiconlight").style.display = 'block';
+            document.getElementById("wsptext").style.color = '#606060';
+        })
+        document.getElementById("wsp").addEventListener("mouseout", function () {
+            document.getElementById("wspicon").style.display = 'block';
+            document.getElementById("wspiconlight").style.display = 'none';
+            document.getElementById("wsptext").style.color = '#222';
+        })
+        document.getElementById("lkdn").addEventListener("mouseover", function () {
+            document.getElementById("lkdnicon").style.display = 'none';
+            document.getElementById("lkdniconlight").style.display = 'block';
+            document.getElementById("lkdntext").style.color = '#606060';
+        })
+        document.getElementById("lkdn").addEventListener("mouseout", function () {
+            document.getElementById("lkdnicon").style.display = 'block';
+            document.getElementById("lkdniconlight").style.display = 'none';
+            document.getElementById("lkdntext").style.color = '#222';
+        })
+        document.getElementById("tlgrm").addEventListener("mouseover", function () {
+            document.getElementById("tlgrmicon").style.display = 'none';
+            document.getElementById("tlgrmiconlight").style.display = 'block';
+            document.getElementById("tlgrmtext").style.color = '#606060';
+        })
+        document.getElementById("tlgrm").addEventListener("mouseout", function () {
+            document.getElementById("tlgrmicon").style.display = 'block';
+            document.getElementById("tlgrmiconlight").style.display = 'none';
+            document.getElementById("tlgrmtext").style.color = '#222';
+        })
+        document.getElementById("mail").addEventListener("mouseover", function () {
+            document.getElementById("mailicon").style.display = 'none';
+            document.getElementById("mailiconlight").style.display = 'block';
+            document.getElementById("mailtext").style.color = '#606060';
+        })
+        document.getElementById("mail").addEventListener("mouseout", function () {
+            document.getElementById("mailicon").style.display = 'block';
+            document.getElementById("mailiconlight").style.display = 'none';
+            document.getElementById("mailtext").style.color = '#222';
+        })
 
-        document.getElementById("mail").href = ("mailto:" + obj.email);
-        document.getElementById("mail2").href = ("mailto:" + obj.email);
-        document.getElementById("tlgrm").href = ("https://t.me/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-        document.getElementById("tlgrm2").href = ("https://t.me/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-
-        document.getElementById("lkdn").href = ("https://linkedin.com/in/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-        document.getElementById("lkdn2").href = ("https://linkedin.com/in/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase());
-
-        console.log(objx.results[0].name.first);
-        console.log(obj.nombre);
-
-
+        console.log(objx);
 
         document.getElementById('dondeVivo').addEventListener("click", function () {
             document.getElementById('parrafo').innerHTML = "Vivo en calle " + objx.results[0].location.street.name + " número " + objx.results[0].location.street.number + " ciudad de " + objx.results[0].location.city + ", " + objx.results[0].location.state + ", " + objx.results[0].location.country + ".";
@@ -69,7 +112,11 @@ xhr.onreadystatechange = function () {
         document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
     })
     document.getElementById('quienSoy').addEventListener("click", function () {
-        document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
+        if (objx.results[0].id.value === null) {
+            document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y no tengo identificación.";
+        } else {
+            document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi identificación es: " + obj.dni + ".";
+        }
     });
 }
 xhr.send();
@@ -134,25 +181,6 @@ for (i = 0; i < inLinkPeq.length; i++) {
     });
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 document.getElementById('exp1').innerHTML = obj.anioTrabajo1
 
 document.getElementById('exp2').innerHTML = obj.anioTrabajo2
@@ -164,26 +192,6 @@ document.getElementById('cual1').innerHTML = obj.cual1
 document.getElementById('cual2').innerHTML = obj.cual2
 
 document.getElementById('cual3').innerHTML = obj.cual3
-
-//para usar si no se usa el ajax
-
-// document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el " + obj.dia + " de " + obj.mes + " del " + obj.anio + ".";
-
-// document.getElementById('quienSoy').addEventListener("click", function () {
-//     document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
-// });
-
-// var img = document.createElement("img");
-// img.src = "images/24.jpg";
-// var src = document.getElementById("profile");
-// img.onload = function () {
-//     img.height = 150;
-//     img.width = 150;
-//     img.style.borderRadius = "10%";
-
-// };
-
-
 
 document.getElementById('exp1').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = "Entre los años " + obj.anioTrabajo1 + " desempeñé tareas de " + obj.exp1 + ".";
@@ -221,12 +229,6 @@ document.getElementById('entiendo').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = "Entiendo y estoy aprendiendo el " + obj.idioma3 + ".";
 });
 
-
-
-
-
-
-
 document.getElementById('cual1').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = obj.trabajoEquipo + ".";
 });
@@ -239,8 +241,6 @@ document.getElementById('cual3').addEventListener("click", function () {
     document.getElementById('parrafo').innerHTML = obj.atencion + ".";
 });
 
-
-
 //sin ajax
 
 // function imgclick() {
@@ -248,3 +248,19 @@ document.getElementById('cual3').addEventListener("click", function () {
 
 
 // }
+
+// document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el " + obj.dia + " de " + obj.mes + " del " + obj.anio + ".";
+
+// document.getElementById('quienSoy').addEventListener("click", function () {
+//     document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi DNI es: " + obj.dni + ".";;
+// });
+
+// var img = document.createElement("img");
+// img.src = "images/24.jpg";
+// var src = document.getElementById("profile");
+// img.onload = function () {
+//     img.height = 150;
+//     img.width = 150;
+//     img.style.borderRadius = "10%";
+
+// };

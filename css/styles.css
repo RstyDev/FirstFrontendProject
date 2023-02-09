@@ -116,10 +116,10 @@
 
 
 
-.dropdown-container a:hover {
+/* .dropdown-container a:hover {
     background-color: #e0e0e0;
     color: black;
-}
+} */
 
 .main {
     margin-left: 20%;
@@ -156,12 +156,21 @@ p {
 }
 
 /* En mouse-over */
-.links a:hover,
+
 .rightnav a:hover,
 .sidenav a:hover,
 .dropdown-btn:hover {
     color: #606060;
 }
+
+#wspiconlight,
+#lkdniconlight,
+#tlgrmiconlight,
+#mailiconlight {
+    display: none;
+}
+
+
 
 .links div {
     flex-grow: 1;
