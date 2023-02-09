@@ -87,6 +87,7 @@
 .popup-btn {
     position: relative;
     text-align: center;
+    display: none;
 }
 
 /* Clase active, boton seleccionado */
@@ -104,13 +105,9 @@
 
 
 
-.popupBox {
-    display: none;
-    width: 60%;
-    margin-left: 20%;
-}
 
-.popup-container a:hover,
+
+
 .dropdown-container a:hover {
     background-color: #e0e0e0;
     color: black;
@@ -162,20 +159,12 @@ p {
     flex-grow: 1;
     color: #b0b0b0;
     text-align: center;
-    padding: 14px 16px;
+    padding: 14px 0px;
     text-decoration: solid;
+    width: 25%;
 }
 
-.contLink {
 
-    left: 33%;
-    flex-grow: 1;
-    padding-top: 14px;
-    padding-bottom: 16px;
-    padding-right: 35px;
-
-
-}
 
 .linkText {
     float: left;
@@ -200,10 +189,12 @@ p {
     max-height: 130px;
 }
 
+
+
 .contactlinks {
-    width: 58%;
-    margin-left: 19.5%;
-    margin-right: 22.5%;
+    width: 60%;
+    margin-left: 20%;
+    /* margin-right: 19.5%; */
 }
 
 .links {
@@ -215,41 +206,11 @@ p {
     padding-left: 0;
 }
 
-.popup-container {
-    position: relative;
-    display: none;
-    cursor: pointer;
-    background-color: #d9d9d9;
-    padding-left: 0px;
-    bottom: 50px;
-    height: 50px;
-    width: 80%;
-    left: 10%;
-    bottom: 0px;
 
-}
 
-.linkpeq {
-    padding-top: 7px;
-    flex-grow: 1;
-    width: 25%;
-}
 
-.popup-container .popuptext {
 
-    width: 100%;
-    color: #222;
-    text-align: center;
-    border-radius: 6px;
-    padding: 8px 0;
-    position: absolute;
-    z-index: 1;
-}
 
-.linkpeq .icon {
-    width: 30px;
-    height: 30px;
-}
 
 
 
@@ -285,18 +246,35 @@ p {
     }
 
 
+
 }
 
 @media screen and (max-width: 520px) {
+    .popup-btn {
+        display: block;
+    }
+
+    .link .icon {
+        width: 18px;
+        height: 18px;
+        padding-right: 0px;
+
+    }
+
+    .link {
+        padding-top: 7px;
+        flex-grow: 1;
+        width: 25%;
+    }
+
     .links {
         display: none;
     }
 
-    .popupBox {
-        display: block;
+    div .contactlinks {
+        width: 58%;
+        margin-left: 21%;
     }
-
-
 
 }
 
@@ -342,6 +320,13 @@ p {
         display: none;
     }
 
+
+
+
+
+}
+
+@media screen and (max-width: 1000px) {
     .link img {
         width: 50px;
         height: 50px;
@@ -351,9 +336,8 @@ p {
         display: none;
     }
 
-    div .contactlinks {
-        width: 70%;
-        margin-left: 15%;
+    .icon {
+        padding-left: 15px;
+        padding-right: 10px;
     }
-
 }
