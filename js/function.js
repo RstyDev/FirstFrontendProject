@@ -122,29 +122,62 @@ xhr.onreadystatechange = function () {
 xhr.send();
 
 var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
+var container = document.getElementsByClassName("dropdown-container");
+var popup = document.getElementsByClassName("popup-btn");
+var popupbtn = document.getElementById("popupBtn");
+var popupContent = document.getElementsByClassName("links");
+var i, j, k;
 for (i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function () {
-        this.classList.toggle("active");
         var dropdownContent = this.nextElementSibling;
         if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
+            for (j = 0; j < dropdown.length; j++) {
+                container[j].style.display = "none";
+            }
+            for (k = 0; k < dropdown.length; k++) {
+                dropdown[k].classList.remove("active");
+            }
+            popupbtn.classList.remove("active");
+            popupContent[0].style.display = "none";
+
         } else {
+            for (j = 0; j < dropdown.length; j++) {
+                container[j].style.display = "none";
+            }
+            for (k = 0; k < dropdown.length; k++) {
+                dropdown[k].classList.remove("active");
+            }
+            this.classList.toggle("active");
             dropdownContent.style.display = "block";
+            popupbtn.classList.remove("active");
+            popupContent[0].style.display = "none";
         }
+
     });
 }
 
-var popup = document.getElementsByClassName("popup-btn");
-var k;
+
+
 for (j = 0; j < popup.length; j++) {
     popup[j].addEventListener("click", function () {
         this.classList.toggle("active");
         var popupContent = this.nextElementSibling;
         if (popupContent.style.display === "flex") {
             popupContent.style.display = "none";
+            for (j = 0; j < dropdown.length; j++) {
+                container[j].style.display = "none";
+            }
+            for (k = 0; k < dropdown.length; k++) {
+                dropdown[k].classList.remove("active");
+            }
         } else {
             popupContent.style.display = "flex";
+            for (j = 0; j < dropdown.length; j++) {
+                container[j].style.display = "none";
+            }
+            for (k = 0; k < dropdown.length; k++) {
+                dropdown[k].classList.remove("active");
+            }
         }
     });
 }
@@ -153,30 +186,26 @@ var inContLink = document.getElementsByClassName("inContainerLink");
 
 for (i = 0; i < inContLink.length; i++) {
     inContLink[i].addEventListener("click", function () {
-        var dropdownContent = this.parentElement;
-        for (var j = 0; j < dropdown.length; j++) {
+        for (j = 0; j < dropdown.length; j++) {
             dropdown[j].classList.remove("active");
-        }
-        if (dropdownContent.style.display === "block") {
-            dropdownContent.style.display = "none";
-        } else {
-            dropdownContent.style.display = "block";
+            for (k = 0; k < container.length; k++) {
+                container[k].style.display = "none";
+            }
         }
     });
 }
-
-var inLinkPeq = document.getElementsByClassName("linkpeq");
-
+var screensize = window.matchMedia("(max-width: 520px)")
+var inLinkPeq = document.getElementsByClassName("links");
 for (i = 0; i < inLinkPeq.length; i++) {
     inLinkPeq[i].addEventListener("click", function () {
-        var popupContent = this.parentElement;
-        for (var j = 0; j < popup.length; j++) {
-            popup[j].classList.remove("active");
-        }
-        if (popupContent.style.display === "flex") {
-            popupContent.style.display = "none";
-        } else {
-            popupContent.style.display = "flex";
+
+        if (screensize.matches) {
+            popup[0].classList.remove("active");
+            if (popupContent[0].style.display === "flex") {
+                popupContent[0].style.display = "none";
+            } else {
+                popupContent[0].style.display = "flex";
+            }
         }
     });
 }

@@ -116,6 +116,7 @@
 
 
 
+
 /* .dropdown-container a:hover {
     background-color: #e0e0e0;
     color: black;
@@ -220,11 +221,17 @@ p {
     width: 100%;
 }
 
-.links a {
+.links button {
     padding-left: 0;
 }
 
+.icon {
+    float: left;
+    padding-right: 10px;
+    margin-left: 0px;
+    margin-right: 10px;
 
+}
 
 
 
