@@ -194,12 +194,13 @@ for (i = 0; i < inContLink.length; i++) {
         }
     });
 }
-var screensize = window.matchMedia("(max-width: 520px)")
+var smallsize = window.matchMedia("(max-width: 520px)")
+
 var inLinkPeq = document.getElementsByClassName("links");
 for (i = 0; i < inLinkPeq.length; i++) {
     inLinkPeq[i].addEventListener("click", function () {
 
-        if (screensize.matches) {
+        if (smallsize.matches) {
             popup[0].classList.remove("active");
             if (popupContent[0].style.display === "flex") {
                 popupContent[0].style.display = "none";
@@ -209,6 +210,18 @@ for (i = 0; i < inLinkPeq.length; i++) {
         }
     });
 }
+function myFunction(x) {
+    if (smallsize.matches) { // If media query matches
+        popupContent[0].style.display = "none";
+    } else {
+        popupContent[0].style.display = "flex";
+
+    }
+}
+
+var x = window.matchMedia("(max-width: 520px)")
+myFunction(x) // Call listener function at run time
+x.addListener(myFunction) // Attach listener function on state changes
 
 document.getElementById('exp1').innerHTML = obj.anioTrabajo1
 
