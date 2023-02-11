@@ -1,6 +1,13 @@
 //* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
 
 let persona = '{"nombre":"Pedro","apellido":"Alvarez","calle":"49","numero":"332","ciudad":"La Plata","provincia":"Buenos Aires","pais":"Argentina","dni":"35.648.145","anio":"1980","mes":"febrero","dia":"28","celu":"(11)11111111","email":"algunpedroalvarez@gmail.com","estudioSec":"Estudios secundarios completos en la E.E.S.T. N°8 Juan Bautista Alberdi","estudioUniv":"Cursando Analista Programador Universitario en la Universidad Nacional de La Plata","cursos":"Realizado el curso Primeros pasos del desarrollo Frontend en Ticmas Academy","idioma1":"español","idioma2":"inglés","idioma3":"japonés","cual1":"Trabajo en equipo","trabajoEquipo":"Me considero y se me ha reconocido como una persona que contribuye activamente al buen ambiente laboral y a la cooperación mutua entre compañeros. Siempre dispuesto a ayudar a quien lo necesite","cual2":"Liderazgo","liderazgo":"Reacciono eficientemente en situaciones de presión en las que hay que tomar desiciones considerando las repercusiones a futuro, principalmente para la empresa","cual3":"Atención","atencion":"Tras varios años de trabajar en atención al público, he desarrollado una capacidad para mediar en situaciones difíciles con clientes logrando mantener una relación de buenos términos con la empresa y sus empleados, sin perder de vista los intereses de la misma","anioTrabajo1":"2010-2013","exp1":"atención al público y caja en Supermercado Argenchino. Referencias: 11xxxxxxxx","anioTrabajo2":"2013-2015","exp2":"gerente de ventas en Maxiconsumo S.A. Referencias: 11xxxxxxxx","anioTrabajo3":"2015-2020","exp3":"gerente de ventas en Nini Mayorista. Referencias: 11xxxxxxxx"}';
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var container = document.getElementsByClassName("dropdown-container");
+var popup = document.getElementsByClassName("popup-btn");
+var popupbtn = document.getElementById("popupBtn");
+var popupContent = document.getElementsByClassName("links");
+var i, j, k;
+
 const obj = JSON.parse(persona);
 var objx;
 var fecha;
@@ -110,6 +117,16 @@ xhr.onreadystatechange = function () {
     });
     document.getElementById('profile').addEventListener("click", function () {
         document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
+        for (j = 0; j < dropdown.length; j++) {
+            container[j].style.display = "none";
+        }
+        for (k = 0; k < dropdown.length; k++) {
+            dropdown[k].classList.remove("active");
+        }
+        if (smallsize.matches) {
+            popupbtn.classList.remove("active");
+            popupContent[0].style.display = "none";
+        }
     })
     document.getElementById('quienSoy').addEventListener("click", function () {
         if (objx.results[0].id.value === null) {
@@ -121,36 +138,24 @@ xhr.onreadystatechange = function () {
 }
 xhr.send();
 
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var container = document.getElementsByClassName("dropdown-container");
-var popup = document.getElementsByClassName("popup-btn");
-var popupbtn = document.getElementById("popupBtn");
-var popupContent = document.getElementsByClassName("links");
-var i, j, k;
+
 for (i = 0; i < dropdown.length; i++) {
     dropdown[i].addEventListener("click", function () {
         var dropdownContent = this.nextElementSibling;
-        if (dropdownContent.style.display === "block") {
-            for (j = 0; j < dropdown.length; j++) {
-                container[j].style.display = "none";
-            }
-            for (k = 0; k < dropdown.length; k++) {
-                dropdown[k].classList.remove("active");
-            }
+        for (j = 0; j < dropdown.length; j++) {
+            container[j].style.display = "none";
+        }
+        for (k = 0; k < dropdown.length; k++) {
+            dropdown[k].classList.remove("active");
+        }
+        if (smallsize.matches) {
             popupbtn.classList.remove("active");
             popupContent[0].style.display = "none";
-
-        } else {
-            for (j = 0; j < dropdown.length; j++) {
-                container[j].style.display = "none";
-            }
-            for (k = 0; k < dropdown.length; k++) {
-                dropdown[k].classList.remove("active");
-            }
+        }
+        if (dropdownContent.style.display != "block") {
             this.classList.toggle("active");
             dropdownContent.style.display = "block";
-            popupbtn.classList.remove("active");
-            popupContent[0].style.display = "none";
+
         }
 
     });
@@ -162,22 +167,17 @@ for (j = 0; j < popup.length; j++) {
     popup[j].addEventListener("click", function () {
         this.classList.toggle("active");
         var popupContent = this.nextElementSibling;
+        for (j = 0; j < dropdown.length; j++) {
+            container[j].style.display = "none";
+        }
+        for (k = 0; k < dropdown.length; k++) {
+            dropdown[k].classList.remove("active");
+        }
         if (popupContent.style.display === "flex") {
             popupContent.style.display = "none";
-            for (j = 0; j < dropdown.length; j++) {
-                container[j].style.display = "none";
-            }
-            for (k = 0; k < dropdown.length; k++) {
-                dropdown[k].classList.remove("active");
-            }
+
         } else {
             popupContent.style.display = "flex";
-            for (j = 0; j < dropdown.length; j++) {
-                container[j].style.display = "none";
-            }
-            for (k = 0; k < dropdown.length; k++) {
-                dropdown[k].classList.remove("active");
-            }
         }
     });
 }
