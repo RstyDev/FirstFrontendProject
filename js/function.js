@@ -55,6 +55,7 @@ xhr.onreadystatechange = function () {
         function lkdnlink() {
             window.open("https://linkedin.com/in/example" + obj.nombre.toLowerCase() + obj.apellido.toLowerCase(), '_blank');
         }
+        // en mouseover cambian el icono del link por el mismo icono mas claro
         document.getElementById("wsp").addEventListener("mouseover", function () {
             document.getElementById("wspicon").style.display = 'none';
             document.getElementById("wspiconlight").style.display = 'block';
@@ -129,7 +130,8 @@ xhr.onreadystatechange = function () {
         }
     })
     document.getElementById('quienSoy').addEventListener("click", function () {
-        if (objx.results[0].id.value === null) {
+        if (objx.results[0].id.value === null || objx.results[0].id.value.includes("undefined")) {
+            // dice no tengo identificacion cuando da resultado de NaNNxxxundefined y cuando da value null
             document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y no tengo identificación.";
         } else {
             document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + " y mi identificación es: " + obj.dni + ".";
