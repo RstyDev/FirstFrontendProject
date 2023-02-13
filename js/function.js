@@ -201,7 +201,12 @@ var smallsize = window.matchMedia("(max-width: 520px)")
 var inLinkPeq = document.getElementsByClassName("links");
 for (i = 0; i < inLinkPeq.length; i++) {
     inLinkPeq[i].addEventListener("click", function () {
-
+        for (j = 0; j < dropdown.length; j++) {
+            container[j].style.display = "none";
+        }
+        for (k = 0; k < dropdown.length; k++) {
+            dropdown[k].classList.remove("active");
+        }
         if (smallsize.matches) {
             popup[0].classList.remove("active");
             if (popupContent[0].style.display === "flex") {

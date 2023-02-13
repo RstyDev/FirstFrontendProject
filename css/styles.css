@@ -22,7 +22,7 @@
     /* Position the navbar at the top of the page */
     /* Full width */
     min-height: 70px;
-    max-height: 130px;
+    max-height: 170px;
 
 }
 
@@ -31,7 +31,7 @@
     height: 100%;
     /* Full-height: remove this if you want "auto" height */
     max-width: 250px;
-    min-width: 80px;
+    min-width: 40px;
 
     position: fixed;
     /* Fixed Sidebar (stay in place on scroll) */
@@ -52,7 +52,7 @@
     height: 100%;
     /* Full-height: remove this if you want "auto" height */
     max-width: 250px;
-    min-width: 80px;
+    min-width: 40px;
     position: fixed;
     /* Fixed rightbar (stay in place on scroll) */
     z-index: 1;
@@ -113,6 +113,10 @@
     outline: none;
 }
 
+/* body {
+    position: fixed;
+    top: 0px;
+} */
 
 
 
@@ -132,6 +136,7 @@
 }
 
 #profile img {
+    position: relative;
     margin-right: 30px;
     margin-bottom: 30px;
 }
@@ -243,7 +248,8 @@ p {
 
 
 /* Todos los media queries */
-@media screen and (max-height: 450px) {
+
+/* @media screen and (max-height: 450px) {
 
     .sidenav,
     .rightnav {
@@ -259,20 +265,25 @@ p {
         margin-top: 0px;
     }
 
-    #profile {
+    #profile img {
         padding: 0;
         margin-bottom: 0px;
     }
-}
+} */
 
-@media screen and (max-width: 400px) {
+
+@media screen and (max-width: 350px) {
+    #profile img {
+        height: 110px;
+        width: 110px;
+    }
+
     .main {
         margin-top: 140px;
     }
-
-
-
 }
+
+@media screen and (max-width: 400px) {}
 
 @media screen and (max-width: 520px) {
     .popup-btn {
@@ -306,9 +317,11 @@ p {
 }
 
 
+
+
 @media screen and (max-width: 600px) {
     .main {
-        top: 20px;
+        padding-top: 10px;
     }
 
     #profile {
@@ -328,15 +341,11 @@ p {
 
 }
 
-@media screen and (max-width: 680px) {
-    .main {
-        padding-top: 20px;
-    }
-}
+
 
 @media screen and (max-width: 750px) {
     .titlebar a {
-        font-size: 30px;
+        font-size: 25px;
     }
 }
 
