@@ -1,13 +1,15 @@
-.titlebar a {
+.titlebar h1 {
     max-width: 60%;
     margin-left: 20%;
     margin-right: 20%;
+    margin-top: 0px;
+    margin-bottom: 0px;
     display: block;
     color: #222222;
     text-align: center;
     padding: 14px 16px;
     text-decoration: solid;
-    font-size: 35px;
+    font-size: 25px;
 }
 
 /* Titulo */
@@ -186,8 +188,6 @@ p {
     display: none;
 }
 
-
-
 .links div {
     flex-grow: 1;
     color: #b0b0b0;
@@ -197,8 +197,6 @@ p {
     width: 25%;
 }
 
-
-
 .linkText {
     float: left;
     text-decoration: none;
@@ -206,6 +204,7 @@ p {
     font-size: 18px;
     padding-top: 8px;
     padding-bottom: 8px;
+    margin-left: 10px;
 }
 
 .contactbar {
@@ -225,12 +224,9 @@ p {
     max-height: 130px;
 }
 
-
-
 .contactlinks {
     width: 60%;
     margin-left: 20%;
-    /* margin-right: 19.5%; */
 }
 
 .links {
@@ -247,60 +243,23 @@ p {
     padding-right: 10px;
     margin-left: 0px;
     margin-right: 10px;
-
 }
-
-
-
-
-
-
-
-
 
 /* Todos los media queries */
 
-/* @media screen and (max-height: 450px) {
-
-    .sidenav,
-    .rightnav {
-        padding-top: 15px;
-    }
-
-    .sidenav a,
-    .rightnav a {
-        font-size: 17px;
-    }
-
-    p {
-        margin-top: 0px;
-    }
-
-    #profile img {
-        padding: 0;
-        margin-bottom: 0px;
-    }
-} */
 
 
-@media screen and (max-width: 343px) {
+@media screen and (max-width: 300px) {
     #profile img {
         height: 110px;
         width: 110px;
     }
-
-    .main {
-        margin-top: 140px;
-    }
-
 }
 
-@media screen and (max-width: 480px) {
-    /* #parrafo {
-        top: 200px;
-    } */
-
-
+@media screen and (max-width: 500px) {
+    img {
+        float: none;
+    }
 }
 
 @media screen and (max-width: 520px) {
@@ -321,44 +280,23 @@ p {
         width: 25%;
     }
 
-    .popup-btn {
-        width: 180%;
-        left: -35%;
-    }
-
-
     div .contactlinks {
         width: 50%;
         margin-left: 21%;
     }
-
 }
-
-
-
 
 @media screen and (max-width: 600px) {
     .main {
         padding-top: 10px;
     }
-
-
-
-    .link img {
-        height: 10px;
-        width: 10px;
-    }
 }
-
-
 
 @media screen and (max-width: 750px) {
     .titlebar a {
         font-size: 25px;
     }
 }
-
-
 
 @media screen and (max-width: 980px) {
     .dropdown-btn span {
@@ -374,17 +312,7 @@ p {
 }
 
 @media screen and (max-width: 1000px) {
-    .link img {
-        width: 50px;
-        height: 50px;
-    }
-
     .linkText {
         display: none;
-    }
-
-    .icon {
-        padding-left: 15px;
-        padding-right: 10px;
     }
 }

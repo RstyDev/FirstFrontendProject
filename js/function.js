@@ -1,4 +1,4 @@
-//* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+//* Cree un objeto persona en caso de que quiera usarlo por algun motivo y para brindar los datos que no estan en el randomUser, como experiencia laboral, etc */
 
 let persona = '{"nombre":"Pedro","apellido":"Alvarez","calle":"49","numero":"332","ciudad":"La Plata","provincia":"Buenos Aires","pais":"Argentina","dni":"35.648.145","anio":"1980","mes":"febrero","dia":"28","celu":"(11)11111111","email":"algunpedroalvarez@gmail.com","estudioSec":"Estudios secundarios completos en la E.E.S.T. N°8 Juan Bautista Alberdi","estudioUniv":"Cursando Analista Programador Universitario en la Universidad Nacional de La Plata","cursos":"Realizado el curso Primeros pasos del desarrollo Frontend en Ticmas Academy","idioma1":"español","idioma2":"inglés","idioma3":"japonés","cual1":"Trabajo en equipo","trabajoEquipo":"Me considero y se me ha reconocido como una persona que contribuye activamente al buen ambiente laboral y a la cooperación mutua entre compañeros. Siempre dispuesto a ayudar a quien lo necesite","cual2":"Liderazgo","liderazgo":"Reacciono eficientemente en situaciones de presión en las que hay que tomar desiciones considerando las repercusiones a futuro, principalmente para la empresa","cual3":"Atención","atencion":"Tras varios años de trabajar en atención al público, he desarrollado una capacidad para mediar en situaciones difíciles con clientes logrando mantener una relación de buenos términos con la empresa y sus empleados, sin perder de vista los intereses de la misma","anioTrabajo1":"2010-2013","exp1":"atención al público y caja en Supermercado Argenchino. Referencias: 11xxxxxxxx","anioTrabajo2":"2013-2015","exp2":"gerente de ventas en Maxiconsumo S.A. Referencias: 11xxxxxxxx","anioTrabajo3":"2015-2020","exp3":"gerente de ventas en Nini Mayorista. Referencias: 11xxxxxxxx"}';
 var dropdown = document.getElementsByClassName("dropdown-btn");
@@ -104,6 +104,7 @@ xhr.onreadystatechange = function () {
         });
 
         var img = document.createElement("img");
+        img.className = "img-thumbnail"; //durante todo el proyecto busque trabajar en CSS solamente porque el enunciado no decía si debiamos usar solo CSS o bootstrap. En ésta instancia decidí poner en práctica algo con bootstrap también
         img.src = objx.results[0].picture.large;
         var src = document.getElementById("profile");
         img.onload = function () {
@@ -112,6 +113,7 @@ xhr.onreadystatechange = function () {
             img.style.borderRadius = "10%";
         };
         src.appendChild(img);
+
     }
     document.getElementById('naci').addEventListener("click", function () {
         document.getElementById('parrafo').innerHTML = "Nací el " + obj.dia + " de " + obj.mes + " del año " + obj.anio + " en " + obj.ciudad + ", " + obj.provincia + ", " + obj.pais + ".";
@@ -157,9 +159,7 @@ for (i = 0; i < dropdown.length; i++) {
         if (dropdownContent.style.display != "block") {
             this.classList.toggle("active");
             dropdownContent.style.display = "block";
-
         }
-
     });
 }
 
@@ -168,7 +168,7 @@ for (i = 0; i < dropdown.length; i++) {
 for (j = 0; j < popup.length; j++) {
     popup[j].addEventListener("click", function () {
         this.classList.toggle("active");
-        var popupContent = this.nextElementSibling;
+        var popupContent = document.getElementsByClassName("links")[0];
         for (j = 0; j < dropdown.length; j++) {
             container[j].style.display = "none";
         }
@@ -217,18 +217,80 @@ for (i = 0; i < inLinkPeq.length; i++) {
         }
     });
 }
-function myFunction(x) {
-    if (smallsize.matches) { // If media query matches
+//las proximas dos funciones son para hacer para dar comportamiento correcto al contactbar sin importar cuando y como se cambie de tamaño de pantalla
+var icon = document.getElementsByClassName("icon");
+function myFunction(smallsize) {
+    if ((smallsize.matches) || (smallheight.matches)) {
+        popup[0].classList.remove("active");
         popupContent[0].style.display = "none";
+        popup[0].style.display = "block"
+        if (smallsize.matches) {
+            for (i = 0; i < icon.length; i++) {
+                icon[i].style.height = "18px";
+                icon[i].style.width = "18px";
+                icon[i].style.padding = "0px";
+                icon[i].style.margin = "0px";
+            }
+        } else {
+            for (i = 0; i < icon.length; i++) {
+                icon[i].style.height = "45px";
+                icon[i].style.width = "50px";
+                icon[i].style.padding = "0px";
+                icon[i].style.margin = "0px";
+            }
+        }
     } else {
         popupContent[0].style.display = "flex";
-
+        popup[0].classList.remove("active")
+        popup[0].style.display = "none";
+        for (i = 0; i < icon.length; i++) {
+            icon[i].style.height = "45px";
+            icon[i].style.width = "50px";
+            icon[i].style.padding = "0px";
+            icon[i].style.margin = "0px";
+        }
+    }
+}
+function myFunction2(smallhieght) {
+    if ((smallheight.matches) || (smallsize.matches)) {
+        popup[0].classList.remove("active");
+        popupContent[0].style.display = "none";
+        popup[0].style.display = "block";
+        if (smallsize.matches) {
+            for (i = 0; i < icon.length; i++) {
+                icon[i].style.height = "18px";
+                icon[i].style.width = "18px";
+                icon[i].style.padding = "0px";
+                icon[i].style.margin = "0px";
+            }
+        } else {
+            for (i = 0; i < icon.length; i++) {
+                icon[i].style.height = "45px";
+                icon[i].style.width = "50px";
+                icon[i].style.padding = "0px";
+                icon[i].style.margin = "0px";
+            }
+        }
+    } else {
+        popupContent[0].style.display = "flex";
+        popup[0].classList.remove("active");
+        popup[0].style.display = "none";
+        for (i = 0; i < icon.length; i++) {
+            icon[i].style.height = "45px";
+            icon[i].style.width = "50px";
+            icon[i].style.padding = "0px";
+            icon[i].style.margin = "0px";
+        }
     }
 }
 
-var x = window.matchMedia("(max-width: 520px)")
-myFunction(x) // Call listener function at run time
-x.addListener(myFunction) // Attach listener function on state changes
+var smallheight = window.matchMedia("(max-height: 450px)")
+myFunction2(smallheight)
+smallheight.addListener(myFunction2)
+
+var smallsize = window.matchMedia("(max-width: 520px)")
+myFunction(smallsize) // Call listener function at run time
+smallsize.addListener(myFunction) // Attach listener function on state changes
 
 document.getElementById('exp1').innerHTML = obj.anioTrabajo1
 
