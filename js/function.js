@@ -147,29 +147,25 @@ for (i = 0; i < container.length; i++) {
     container[i].previousElementSibling.addEventListener("click", function () {
         var dropdownContent = this.nextElementSibling;
         for (j = 0; j < dropdown.length; j++) {
-            container[j].style.display = "none";
+            if (container[i].style.display = "none") {
+                container[j].style.display = "none";
+                container[i].style.display = "block";
+                dropdown[j].classList.remove("active");
+                dropdown[i].classList.add("active");
+            }else{
+                container[j].style.display = "none";  
+                dropdown[j].classList.remove("active");
+            }
         }
-        for (j = 0; j < dropdown.length; j++) {
-            dropdown[j].classList.remove("active");
         } // esto estamos viendo
         if ((smallsize.matches) || (smallheight.matches)) {
             popupbtn.classList.remove("active");
             popupContent[0].style.display = "none";
         }
-        if (dropdownContent.style.display != "block") {
-            this.classList.add("active");
-            dropdownContent.style.display = "block";
-        }else{
-            this.classList.remove("active");
-            dropdownContent.style.display = "none";
-        }
     });
 }
 
-//document.getElementsByClassName("dropdown-btn active")[0].addEventListener("click", function () {
-//    this.classList.remove("active");
-//    this.nextElementSibling.style.display = "none";
-//});
+
 
 
 
