@@ -163,10 +163,10 @@ for (i = 0; i < dropdown.length; i++) {
     });
 }
 
-document.getElementsByClassName("dropdown-btn active")[0].addEventListener("click", function () {
-    this.classList.remove("active");
-    this.nextElementSibling.style.display = "none";
-});
+//document.getElementsByClassName("dropdown-btn active")[0].addEventListener("click", function () {
+//    this.classList.remove("active");
+//    this.nextElementSibling.style.display = "none";
+//});
 
 
 
