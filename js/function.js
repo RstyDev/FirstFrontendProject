@@ -173,7 +173,7 @@ for (i = 0; i < container.length; i++) {
 
 
 popup[0].addEventListener("click", function () {
-    this.classList.add("active");
+    this.classList.toggle("active");
     var popupContent = document.getElementsByClassName("links")[0];
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
