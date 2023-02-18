@@ -146,17 +146,20 @@ xhr.send();
 for (i = 0; i < container.length; i++) {
     container[i].previousElementSibling.addEventListener("click", function () {
         var dropdownContent = this.nextElementSibling;
-        for (j = 0; j < dropdown.length; j++) {
-            if (dropdownContent.style.display === "none") {
+        if (dropdownContent.style.display === "none"){        
+            for (j = 0; j < dropdown.length; j++) {            
                 container[j].style.display = "none";
-                dropdownContent.style.display = "block";
                 dropdown[j].classList.remove("active");
+                dropdownContent.style.display = "block";
                 this.classList.add("active");
-            }else{
+            }
+        }else{
+            for (j = 0; j < dropdown.length; j++) {
                 container[j].style.display = "none";  
                 dropdown[j].classList.remove("active");
             }
         }
+        
          // esto estamos viendo
         if ((smallsize.matches) || (smallheight.matches)) {
             popupbtn.classList.remove("active");
