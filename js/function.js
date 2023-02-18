@@ -157,7 +157,7 @@ for (i = 0; i < dropdown.length; i++) {
             popupContent[0].style.display = "none";
         }
         if (dropdownContent.style.display != "block") {
-            this.classList.toggle("active");
+            this.classList.add("active");
             dropdownContent.style.display = "block";
         }
     });
