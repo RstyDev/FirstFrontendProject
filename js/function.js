@@ -143,15 +143,15 @@ xhr.onreadystatechange = function () {
 xhr.send();
 
 
-for (i = 0; i < dropdown.length; i++) {
-    dropdown[i].addEventListener("click", function () {
+for (i = 0; i < container.length; i++) {
+    container[i].previousElementSibling.addEventListener("click", function () {
         var dropdownContent = this.nextElementSibling;
         for (j = 0; j < dropdown.length; j++) {
             container[j].style.display = "none";
         }
         for (j = 0; j < dropdown.length; j++) {
             dropdown[j].classList.remove("active");
-        }
+        } // esto estamos viendo
         if ((smallsize.matches) || (smallheight.matches)) {
             popupbtn.classList.remove("active");
             popupContent[0].style.display = "none";
