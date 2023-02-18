@@ -159,6 +159,9 @@ for (i = 0; i < dropdown.length; i++) {
         if (dropdownContent.style.display != "block") {
             this.classList.add("active");
             dropdownContent.style.display = "block";
+        }else{
+            this.classList.remove("active");
+            dropdownContent.style.display = "none";
         }
     });
 }
@@ -171,7 +174,7 @@ for (i = 0; i < dropdown.length; i++) {
 
 
 popup[0].addEventListener("click", function () {
-    this.classList.toggle("active");
+    this.classList.add("active");
     var popupContent = document.getElementsByClassName("links")[0];
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
