@@ -159,6 +159,9 @@ for (i = 0; i < dropdown.length; i++) {
         if (dropdownContent.style.display != "block") {
             this.classList.toggle("active");
             dropdownContent.style.display = "block";
+        }else{
+            this.classList.remove("active");
+            dropdownContent.style.display = "none";
         }
     });
 }
