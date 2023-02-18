@@ -168,24 +168,22 @@ for (i = 0; i < dropdown.length; i++) {
 
 
 
-for (j = 0; j < popup.length; j++) {
-    popup[j].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var popupContent = document.getElementsByClassName("links")[0];
-        for (j = 0; j < dropdown.length; j++) {
-            container[j].style.display = "none";
-        }
-        for (j = 0; j < dropdown.length; j++) {
-            dropdown[j].classList.remove("active");
-        }
-        if (popupContent.style.display === "flex") {
-            popupContent.style.display = "none";
+popup[0].addEventListener("click", function () {
+    this.classList.toggle("active");
+    var popupContent = document.getElementsByClassName("links")[0];
+    for (j = 0; j < dropdown.length; j++) {
+        container[j].style.display = "none";
+    }
+    for (j = 0; j < dropdown.length; j++) {
+        dropdown[j].classList.remove("active");
+    }
+    if (popupContent.style.display === "flex") {
+        popupContent.style.display = "none";
+    } else {
+        popupContent.style.display = "flex";
+    }
+});
 
-        } else {
-            popupContent.style.display = "flex";
-        }
-    });
-}
 
 var inContLink = document.getElementsByClassName("inContainerLink");
 
