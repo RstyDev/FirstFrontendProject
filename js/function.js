@@ -147,11 +147,11 @@ for (i = 0; i < container.length; i++) {
     container[i].previousElementSibling.addEventListener("click", function () {
         var dropdownContent = this.nextElementSibling;
         for (j = 0; j < dropdown.length; j++) {
-            if (container[i].style.display === "none") {
+            if (dropdownContent.style.display === "none") {
                 container[j].style.display = "none";
-                container[i].style.display = "block";
+                dropdownContent.style.display = "block";
                 dropdown[j].classList.remove("active");
-                dropdown[i].classList.add("active");
+                this.classList.add("active");
             }else{
                 container[j].style.display = "none";  
                 dropdown[j].classList.remove("active");
