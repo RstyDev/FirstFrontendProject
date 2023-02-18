@@ -72,8 +72,8 @@
     padding-top: 20px;
 }
 
-.rightnav button,
-.sidenav button,
+.rightnav a,
+.sidenav a,
 .dropdown-btn,
 .popup-btn {
     padding: 15px 8px 15px 16px;
