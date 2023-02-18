@@ -147,7 +147,7 @@ for (i = 0; i < container.length; i++) {
     container[i].previousElementSibling.addEventListener("click", function () {
         var dropdownContent = this.nextElementSibling;
         for (j = 0; j < dropdown.length; j++) {
-            if (container[i].style.display = "none") {
+            if (container[i].style.display === "none") {
                 container[j].style.display = "none";
                 container[i].style.display = "block";
                 dropdown[j].classList.remove("active");
