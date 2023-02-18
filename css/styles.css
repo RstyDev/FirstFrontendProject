@@ -72,8 +72,8 @@
     padding-top: 20px;
 }
 
-.rightnav a,
-.sidenav a,
+.rightnav button,
+.sidenav button,
 .dropdown-btn,
 .popup-btn {
     padding: 15px 8px 15px 16px;
@@ -88,6 +88,8 @@
     cursor: pointer;
     outline: none;
 }
+
+
 
 .popup-btn {
     position: relative;

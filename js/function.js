@@ -149,10 +149,10 @@ for (i = 0; i < dropdown.length; i++) {
         for (j = 0; j < dropdown.length; j++) {
             container[j].style.display = "none";
         }
-        for (k = 0; k < dropdown.length; k++) {
-            dropdown[k].classList.remove("active");
+        for (j = 0; j < dropdown.length; j++) {
+            dropdown[j].classList.remove("active");
         }
-        if (smallsize.matches) {
+        if ((smallsize.matches) || (smallheight.matches)) {
             popupbtn.classList.remove("active");
             popupContent[0].style.display = "none";
         }
@@ -172,8 +172,8 @@ for (j = 0; j < popup.length; j++) {
         for (j = 0; j < dropdown.length; j++) {
             container[j].style.display = "none";
         }
-        for (k = 0; k < dropdown.length; k++) {
-            dropdown[k].classList.remove("active");
+        for (j = 0; j < dropdown.length; j++) {
+            dropdown[j].classList.remove("active");
         }
         if (popupContent.style.display === "flex") {
             popupContent.style.display = "none";
@@ -220,10 +220,17 @@ for (i = 0; i < inLinkPeq.length; i++) {
 //las proximas dos funciones son para hacer para dar comportamiento correcto al contactbar sin importar cuando y como se cambie de tamaño de pantalla
 var icon = document.getElementsByClassName("icon");
 function myFunction(smallsize) {
+    for (j = 0; j < dropdown.length; j++) {
+        container[j].style.display = "none";
+    }
+    for (j = 0; j < dropdown.length; j++) {
+        dropdown[j].classList.remove("active");
+    }
     if ((smallsize.matches) || (smallheight.matches)) {
         popup[0].classList.remove("active");
         popupContent[0].style.display = "none";
-        popup[0].style.display = "block"
+        popup[0].style.display = "block";
+
         if (smallsize.matches) {
             for (i = 0; i < icon.length; i++) {
                 icon[i].style.height = "18px";
@@ -251,7 +258,13 @@ function myFunction(smallsize) {
         }
     }
 }
-function myFunction2(smallhieght) {
+function myFunction2(smallheight) {
+    for (j = 0; j < dropdown.length; j++) {
+        container[j].style.display = "none";
+    }
+    for (j = 0; j < dropdown.length; j++) {
+        dropdown[j].classList.remove("active");
+    }
     if ((smallheight.matches) || (smallsize.matches)) {
         popup[0].classList.remove("active");
         popupContent[0].style.display = "none";
@@ -283,6 +296,19 @@ function myFunction2(smallhieght) {
         }
     }
 }
+
+function myFunction3(medsize) {
+    for (j = 0; j < dropdown.length; j++) {
+        container[j].style.display = "none";
+    }
+    for (j = 0; j < dropdown.length; j++) {
+        dropdown[j].classList.remove("active");
+    }
+}
+
+var medsize = window.matchMedia("(max-width: 980px)")
+myFunction2(medsize)
+medsize.addListener(myFunction3)
 
 var smallheight = window.matchMedia("(max-height: 450px)")
 myFunction2(smallheight)
