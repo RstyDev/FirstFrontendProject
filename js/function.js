@@ -157,7 +157,7 @@ for (i = 0; i < container.length; i++) {
                 dropdown[j].classList.remove("active");
             }
         }
-        } // esto estamos viendo
+         // esto estamos viendo
         if ((smallsize.matches) || (smallheight.matches)) {
             popupbtn.classList.remove("active");
             popupContent[0].style.display = "none";
