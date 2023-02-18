@@ -159,11 +159,13 @@ for (i = 0; i < dropdown.length; i++) {
         if (dropdownContent.style.display != "block") {
             this.classList.toggle("active");
             dropdownContent.style.display = "block";
-        }else{
-            this.classList.remove("active");
-            dropdownContent.style.display = "none";
         }
     });
+}
+
+document.getElementsByClassName("dropdown-btn active")[0].addEventListener("click", function () {
+    this.classList.remove("active");
+    this.nextElementSibling.style.display = "none";
 }
 
 
@@ -218,7 +220,7 @@ for (i = 0; i < inLinkPeq.length; i++) {
         }
     });
 }
-//las proximas dos funciones son para hacer para dar comportamiento correcto al contactbar sin importar cuando y como se cambie de tamaño de pantalla
+//las proximas tres funciones son para hacer para dar comportamiento correcto al contactbar y los sidebars sin importar cuando y como se cambie de tamaño de pantalla
 var icon = document.getElementsByClassName("icon");
 function myFunction(smallsize) {
     for (j = 0; j < dropdown.length; j++) {
