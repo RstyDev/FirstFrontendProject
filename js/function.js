@@ -272,7 +272,7 @@ function myFunction2(smallheight) {
             icon[i].style.margin = "0px";
             texto[i].style.fontSize = "12px";
         }       
-    } else {
+    } else {  //CHECKEAR LA VUELTA DEL POPUP
         popupContent[0].style.display = "flex";
         popup[0].classList.remove("active");
         popup[0].style.display = "none";
