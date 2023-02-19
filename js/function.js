@@ -7,7 +7,6 @@ var popup = document.getElementsByClassName("popup-btn");
 var popupbtn = document.getElementById("popupBtn");
 var popupContent = document.getElementsByClassName("links");
 var i, j, k;
-var texto = document.getElementsByClassName("linkText");
 const obj = JSON.parse(persona);
 var objx;
 var fecha;
@@ -224,6 +223,8 @@ for (i = 0; i < inLinkPeq.length; i++) {
 }
 //las proximas tres funciones son para hacer para dar comportamiento correcto al contactbar y los sidebars sin importar cuando y como se cambie de tamaño de pantalla
 var icon = document.getElementsByClassName("icon");
+var texto = document.getElementsByClassName("linkText");
+
 function myFunction(smallsize) {
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
@@ -242,7 +243,7 @@ function myFunction(smallsize) {
             icon[i].style.margin = "0px";
         } 
         for (j = 0; j<texto.length; j++){
-            texto[i].style.fontSize = "12px";
+            texto[j].style.fontSize = "12px";
         } 
     } else {
         popupContent[0].style.display = "flex";
@@ -318,7 +319,7 @@ function myFunction2(smallheight) {
             icon[i].style.margin = "0px";
         }
         for (j = 0; j<texto.length; j++){
-            texto[i].style.fontSize = "12px";
+            texto[j].style.fontSize = "12px";
         }       
     } else {  
         popupContent[0].style.display = "flex";
