@@ -240,6 +240,8 @@ function myFunction(smallsize) {
             icon[i].style.width = "18px";
             icon[i].style.padding = "0px";
             icon[i].style.margin = "0px";
+        } 
+        for (j = 0; j<texto.length; j++){
             texto[i].style.fontSize = "12px";
         } 
     } else {
@@ -314,6 +316,8 @@ function myFunction2(smallheight) {
             icon[i].style.width = "18px";
             icon[i].style.padding = "0px";
             icon[i].style.margin = "0px";
+        }
+        for (j = 0; j<texto.length; j++){
             texto[i].style.fontSize = "12px";
         }       
     } else {  
