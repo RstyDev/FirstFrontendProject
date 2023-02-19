@@ -254,47 +254,47 @@ function myFunction(smallsize) {
         }
     }
 }
-//*----------------------------------------------------------------------------
-function myFunction(smallsize) {
-    for (j = 0; j < dropdown.length; j++) {
-        container[j].style.display = "none";
-    }
-    for (j = 0; j < dropdown.length; j++) {
-        dropdown[j].classList.remove("active");
-    }
-    if ((smallsize.matches) || (smallheight.matches)) {
-        popup[0].classList.remove("active");
-        popupContent[0].style.display = "none";
-        popup[0].style.display = "block";
-
-        if (smallsize.matches) {
-            for (i = 0; i < icon.length; i++) {
-                icon[i].style.height = "18px";
-                icon[i].style.width = "18px";
-                icon[i].style.padding = "0px";
-                icon[i].style.margin = "0px";
-            }
-        } else {
-            for (i = 0; i < icon.length; i++) {
-                icon[i].style.height = "45px";
-                icon[i].style.width = "50px";
-                icon[i].style.padding = "0px";
-                icon[i].style.margin = "0px";
-            }
-        }
-    } else {
-        popupContent[0].style.display = "flex";
-        popup[0].classList.remove("active")
-        popup[0].style.display = "none";
-        for (i = 0; i < icon.length; i++) {
-            icon[i].style.height = "45px";
-            icon[i].style.width = "50px";
-            icon[i].style.padding = "0px";
-            icon[i].style.margin = "0px";
-        }
-    }
-}
----------------------------------------------------------------------------------------------*/
+//----------------------------------------------------------------------------
+//function myFunction(smallsize) {
+//    for (j = 0; j < dropdown.length; j++) {
+//        container[j].style.display = "none";
+//    }
+//    for (j = 0; j < dropdown.length; j++) {
+//        dropdown[j].classList.remove("active");
+//    }
+//    if ((smallsize.matches) || (smallheight.matches)) {
+//        popup[0].classList.remove("active");
+//        popupContent[0].style.display = "none";
+//        popup[0].style.display = "block";
+//
+//        if (smallsize.matches) {
+//            for (i = 0; i < icon.length; i++) {
+//                icon[i].style.height = "18px";
+//                icon[i].style.width = "18px";
+//                icon[i].style.padding = "0px";
+//                icon[i].style.margin = "0px";
+//            }
+//        } else {
+//            for (i = 0; i < icon.length; i++) {
+//                icon[i].style.height = "45px";
+//                icon[i].style.width = "50px";
+//                icon[i].style.padding = "0px";
+//                icon[i].style.margin = "0px";
+//            }
+//        }
+//    } else {
+//        popupContent[0].style.display = "flex";
+//        popup[0].classList.remove("active")
+//        popup[0].style.display = "none";
+//        for (i = 0; i < icon.length; i++) {
+//            icon[i].style.height = "45px";
+//            icon[i].style.width = "50px";
+//            icon[i].style.padding = "0px";
+//            icon[i].style.margin = "0px";
+//        }
+//    }
+//}
+//---------------------------------------------------------------------------------------------
 
 
 
