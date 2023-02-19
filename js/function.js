@@ -240,7 +240,7 @@ function myFunction(smallsize) {
             icon[i].style.width = "18px";
             icon[i].style.padding = "0px";
             icon[i].style.margin = "0px";
-            texto[i].style.fontSize = "8px";
+            texto[i].style.fontSize = "12px";
         } 
     } else {
         popupContent[0].style.display = "flex";
@@ -270,7 +270,7 @@ function myFunction2(smallheight) {
             icon[i].style.width = "18px";
             icon[i].style.padding = "0px";
             icon[i].style.margin = "0px";
-            texto[i].style.fontSize = "8px";
+            texto[i].style.fontSize = "12px";
         }       
     } else {
         popupContent[0].style.display = "flex";
