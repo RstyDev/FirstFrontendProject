@@ -280,14 +280,7 @@ function myFunction2(smallheight) {
                 icon[i].style.width = "18px";
                 icon[i].style.padding = "0px";
                 icon[i].style.margin = "0px";
-            }
-        } else {
-            for (i = 0; i < icon.length; i++) {
-                icon[i].style.height = "45px";
-                icon[i].style.width = "50px";
-                icon[i].style.padding = "0px";
-                icon[i].style.margin = "0px";
-            }
+                
         }
     } else {
         popupContent[0].style.display = "flex";
