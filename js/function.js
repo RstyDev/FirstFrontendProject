@@ -233,12 +233,9 @@ function myFunction(smallsize) {
         dropdown[j].classList.remove("active");
     }
     if ((smallsize.matches) || (smallheight.matches)) {
-        popup[0].classList.remove("active");
-        popupContent[0].style.display = "none";
         popup[0].style.display = "block";
         popup[0].classList.remove("active");
         popupContent[0].style.display = "none";
-        popup[0].style.display = "block";
         for (i = 0; i < icon.length; i++) {
             icon[i].style.height = "18px";
             icon[i].style.width = "18px";
