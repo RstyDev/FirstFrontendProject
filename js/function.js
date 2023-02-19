@@ -255,6 +255,9 @@ function myFunction(smallsize) {
             icon[i].style.padding = "0px";
             icon[i].style.margin = "0px";
         }
+        for (j = 0; j<texto.length; j++){
+            texto[j].style.fontSize = "18px";
+        }
     }
 }
 //----------------------------------------------------------------------------
@@ -330,6 +333,9 @@ function myFunction2(smallheight) {
             icon[i].style.width = "50px";
             icon[i].style.padding = "0px";
             icon[i].style.margin = "0px";
+        }
+        for (j = 0; j<texto.length; j++){
+            texto[j].style.fontSize = "18px";
         }
     }
 }
