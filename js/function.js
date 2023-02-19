@@ -235,22 +235,12 @@ function myFunction(smallsize) {
         popup[0].classList.remove("active");
         popupContent[0].style.display = "none";
         popup[0].style.display = "block";
-
-        if (smallsize.matches) {
-            for (i = 0; i < icon.length; i++) {
-                icon[i].style.height = "18px";
-                icon[i].style.width = "18px";
-                icon[i].style.padding = "0px";
-                icon[i].style.margin = "0px";
-            }
-        } else {
-            for (i = 0; i < icon.length; i++) {
-                icon[i].style.height = "45px";
-                icon[i].style.width = "50px";
-                icon[i].style.padding = "0px";
-                icon[i].style.margin = "0px";
-            }
-        }
+        for (i = 0; i < icon.length; i++) {
+            icon[i].style.height = "18px";
+            icon[i].style.width = "18px";
+            icon[i].style.padding = "0px";
+            icon[i].style.margin = "0px";
+        } 
     } else {
         popupContent[0].style.display = "flex";
         popup[0].classList.remove("active")
