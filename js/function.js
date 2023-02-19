@@ -7,7 +7,7 @@ var popup = document.getElementsByClassName("popup-btn");
 var popupbtn = document.getElementById("popupBtn");
 var popupContent = document.getElementsByClassName("links");
 var i, j, k;
-
+var texto = document.getElementsByClassName("linkText");
 const obj = JSON.parse(persona);
 var objx;
 var fecha;
