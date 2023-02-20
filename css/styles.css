@@ -297,3 +297,10 @@ p {
         margin-left: 15%;
     }
 }
+
+@media screen and (min-width: 1100px) {
+    #profile img {
+        height: 200px;
+        width: 200px;
+    }
+}

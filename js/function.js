@@ -118,19 +118,7 @@ xhr.onreadystatechange = function () {
     document.getElementById('naci').addEventListener("click", function () {
         document.getElementById('parrafo').innerHTML = "Nací el " + obj.dia + " de " + obj.mes + " del año " + obj.anio + " en " + obj.ciudad + ", " + obj.provincia + ", " + obj.pais + ".";
     });
-    document.getElementsByClassName('img-thumbnail')[0].addEventListener("click", function () {
-        document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
-        for (j = 0; j < dropdown.length; j++) {
-            container[j].style.display = "none";
-        }
-        for (k = 0; k < dropdown.length; k++) {
-            dropdown[k].classList.remove("active");
-        }
-        if (smallsize.matches) {
-            popupbtn.classList.remove("active");
-            popupContent[0].style.display = "none";
-        }
-    })
+
     document.getElementById('quienSoy').addEventListener("click", function () {
         if (objx.results[0].id.value === null || objx.results[0].id.value.includes("undefined")) {
             // dice no tengo identificacion cuando da resultado de NaNNxxxundefined y cuando da value null
@@ -239,19 +227,7 @@ smallheight.addListener(myFunction2)
 var smallsize = window.matchMedia("(max-width: 520px)")
 myFunction(smallsize)
 smallsize.addListener(myFunction)
-var bigsize = window.matchMedia("(max-width: 1100px)")
-myFunction5(bigsize)
-bigsize.addListener(myFunction5)
 
-function myFunction5(bigsize) {
-    if (bigsize.matches) {
-        document.getElementById("profileimg").style.height = "150px";
-        document.getElementById("profileimg").style.width = "150px";
-    } else {
-        document.getElementsByTagName("img-thumbnail")[0].style.height = "200px";
-        document.getElementsByTagName("img-thumbnail")[0].style.width = "200px";
-    }
-}
 
 function myFunction(smallsize) {
     for (j = 0; j < dropdown.length; j++) {
