@@ -239,19 +239,7 @@ smallheight.addListener(myFunction2)
 var smallsize = window.matchMedia("(max-width: 520px)")
 myFunction(smallsize)
 smallsize.addListener(myFunction)
-// var bigsize = window.matchMedia("(max-width: 1100px)")
-// myFunction5(bigsize)
-// bigsize.addListener(myFunction5)
 
-// function myFunction5(bigsize) {
-//     if (bigsize.matches) {
-//         document.getElementById("profileimg").style.height = "150px";
-//         document.getElementById("profileimg").style.width = "150px";
-//     } else {
-//         document.getElementById("profileimg").style.height = "180px";
-//         document.getElementById("profileimg").style.width = "180px";
-//     }
-// }
 
 function myFunction(smallsize) {
     for (j = 0; j < dropdown.length; j++) {
