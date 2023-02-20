@@ -110,6 +110,7 @@ xhr.onreadystatechange = function () {
             img.height = 150;
             img.width = 150;
             img.style.borderRadius = "10%";
+            img.id = "profileimg"
         };
         src.appendChild(img);
 
@@ -236,8 +237,21 @@ myFunction2(smallheight)
 smallheight.addListener(myFunction2)
 
 var smallsize = window.matchMedia("(max-width: 520px)")
-myFunction(smallsize) // Call listener function at run time
-smallsize.addListener(myFunction) // Attach listener function on state changes
+myFunction(smallsize)
+smallsize.addListener(myFunction)
+// var bigsize = window.matchMedia("(max-width: 1100px)")
+// myFunction5(bigsize)
+// bigsize.addListener(myFunction5)
+
+// function myFunction5(bigsize) {
+//     if (bigsize.matches) {
+//         document.getElementById("profileimg").style.height = "150px";
+//         document.getElementById("profileimg").style.width = "150px";
+//     } else {
+//         document.getElementById("profileimg").style.height = "180px";
+//         document.getElementById("profileimg").style.width = "180px";
+//     }
+// }
 
 function myFunction(smallsize) {
     for (j = 0; j < dropdown.length; j++) {
@@ -289,21 +303,34 @@ function myFunction(smallsize) {
 
 
 function myFunction2(smallheight) {
-
-    if ((smallheight.matches) && (medsize.matches)) {
-        for (j = 0; j < texto.length; j++) {
-            texto[j].style.display = "block";
+    if (smallheight.matches) {
+        if ((medsmallsize.matches) && !(smallsize.matches)) {
+            for (j = 0; j < texto.length; j++) {
+                texto[j].style.display = "block";
+            }
+        }
+        if (smallsize.matches) {
+            popup[0].classList.remove("active");
+            popupContent[0].style.display = "none";
+            popup[0].style.display = "block";
+            for (j = 0; j < texto.length; j++) {
+                texto[j].style.display = "none";
+            }
+        }
+    } else {
+        if ((medsmallsize.matches) && !(smallsize.matches)) {
+            if ((smallheight.matches) && (medsize.matches)) {
+                for (j = 0; j < texto.length; j++) {
+                    texto[j].style.display = "none";
+                }
+            }
+        }
+        if ((medsmallsize.matches) && !(smallsize.matches)) {
+            for (j = 0; j < texto.length; j++) {
+                texto[j].style.display = "none";
+            }
         }
     }
-    if ((smallheight.matches) && (smallsize.matches)) {
-        popup[0].classList.remove("active");
-        popupContent[0].style.display = "none";
-        popup[0].style.display = "block";
-        for (j = 0; j < texto.length; j++) {
-            texto[j].style.display = "none";
-        }
-    }
-
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
     }
@@ -359,9 +386,15 @@ function myFunction3(medsize) {
 }
 
 function myFunction4(medsmallsize) {
-    if (medsmallsize.matches) {
-        for (j = 0; j < texto.length; j++) {
-            texto[j].style.display = "none";
+    if (!window.matchMedia("(max-height: 450px)").matches) {
+        if (medsmallsize.matches) {
+            for (j = 0; j < texto.length; j++) {
+                texto[j].style.display = "none";
+            }
+        } else {
+            for (j = 0; j < texto.length; j++) {
+                texto[j].style.display = "block";
+            }
         }
     } else {
         for (j = 0; j < texto.length; j++) {
