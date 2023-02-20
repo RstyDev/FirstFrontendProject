@@ -223,6 +223,22 @@ for (i = 0; i < inLinkPeq.length; i++) {
 var icon = document.getElementsByClassName("icon");
 var texto = document.getElementsByClassName("linkText");
 
+var medsmallsize = window.matchMedia("(max-width: 850px)")
+myFunction4(medsmallsize)
+medsmallsize.addListener(myFunction4)
+
+var medsize = window.matchMedia("(max-width: 980px)")
+myFunction3(medsize)
+medsize.addListener(myFunction3)
+
+var smallheight = window.matchMedia("(max-height: 450px)")
+myFunction2(smallheight)
+smallheight.addListener(myFunction2)
+
+var smallsize = window.matchMedia("(max-width: 520px)")
+myFunction(smallsize) // Call listener function at run time
+smallsize.addListener(myFunction) // Attach listener function on state changes
+
 function myFunction(smallsize) {
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
@@ -230,6 +246,17 @@ function myFunction(smallsize) {
     for (j = 0; j < dropdown.length; j++) {
         dropdown[j].classList.remove("active");
     }
+    if ((smallsize.matches) && (smallheight.matches)) {
+        for (j = 0; j < texto.length; j++) {
+            texto[j].style.display = "none";
+        }
+    }
+    if ((smallheight.matches) && !(smallsize.matches)) {
+        for (j = 0; j < texto.length; j++) {
+            texto[j].style.display = "block";
+        }
+    }
+
     if ((smallsize.matches) || (smallheight.matches)) {
         popup[0].classList.remove("active");
         popupContent[0].style.display = "none";
@@ -262,11 +289,21 @@ function myFunction(smallsize) {
 
 
 function myFunction2(smallheight) {
+
     if ((smallheight.matches) && (medsize.matches)) {
         for (j = 0; j < texto.length; j++) {
             texto[j].style.display = "block";
         }
     }
+    if ((smallheight.matches) && (smallsize.matches)) {
+        popup[0].classList.remove("active");
+        popupContent[0].style.display = "none";
+        popup[0].style.display = "block";
+        for (j = 0; j < texto.length; j++) {
+            texto[j].style.display = "none";
+        }
+    }
+
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
     }
@@ -287,6 +324,7 @@ function myFunction2(smallheight) {
         for (j = 0; j < texto.length; j++) {
             texto[j].style.fontSize = "13px";
             texto[j].style.padding = "0px"
+
         }
     } else {
         popupContent[0].style.display = "flex";
@@ -307,7 +345,7 @@ function myFunction2(smallheight) {
 }
 
 function myFunction3(medsize) {
-    if ((smallheight.matches) && (medsize.matches)) {
+    if ((window.matchMedia("(max-height: 450px)").matches) && (medsize.matches)) {
         for (j = 0; j < texto.length; j++) {
             texto[j].style.display = "block";
         }
@@ -320,17 +358,19 @@ function myFunction3(medsize) {
     }
 }
 
-var medsize = window.matchMedia("(max-width: 980px)")
-myFunction2(medsize)
-medsize.addListener(myFunction3)
+function myFunction4(medsmallsize) {
+    if (medsmallsize.matches) {
+        for (j = 0; j < texto.length; j++) {
+            texto[j].style.display = "none";
+        }
+    } else {
+        for (j = 0; j < texto.length; j++) {
+            texto[j].style.display = "block";
+        }
+    }
+}
 
-var smallheight = window.matchMedia("(max-height: 450px)")
-myFunction2(smallheight)
-smallheight.addListener(myFunction2)
 
-var smallsize = window.matchMedia("(max-width: 520px)")
-myFunction(smallsize) // Call listener function at run time
-smallsize.addListener(myFunction) // Attach listener function on state changes
 
 document.getElementById('exp1').innerHTML = obj.anioTrabajo1
 

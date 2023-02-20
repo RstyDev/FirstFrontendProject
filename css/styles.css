@@ -312,8 +312,9 @@ p {
         padding-left: 30px;
     }
 
-    .linkText {
-        display: none;
+    .contactlinks {
+        width: 70%;
+        margin-left: 15%;
     }
 }
 
