@@ -311,10 +311,12 @@ p {
         padding-right: 30px;
         padding-left: 30px;
     }
-}
 
-@media screen and (max-width: 1000px) {
     .linkText {
         display: none;
     }
 }
+
+/* @media screen and (max-width: 1000px) {
+    
+} */

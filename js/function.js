@@ -262,6 +262,11 @@ function myFunction(smallsize) {
 
 
 function myFunction2(smallheight) {
+    if ((smallheight.matches) && (medsize.matches)) {
+        for (j = 0; j < texto.length; j++) {
+            texto[j].style.display = "block";
+        }
+    }
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
     }
@@ -295,11 +300,18 @@ function myFunction2(smallheight) {
         }
         for (j = 0; j < texto.length; j++) {
             texto[j].style.fontSize = "18px";
+            texto[j].style.paddingTop = "8px";
+            texto[j].style.paddingBottom = "8px";
         }
     }
 }
 
 function myFunction3(medsize) {
+    if ((smallheight.matches) && (medsize.matches)) {
+        for (j = 0; j < texto.length; j++) {
+            texto[j].style.display = "block";
+        }
+    }
     for (j = 0; j < dropdown.length; j++) {
         container[j].style.display = "none";
     }
