@@ -116,7 +116,11 @@ xhr.onreadystatechange = function () {
         };
         src.appendChild(img);
         document.getElementById("profileimg").addEventListener("click", function () {
-            document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
+            if (objx.results[0].gender === "male") {
+                document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
+            } else {
+                document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacida en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
+            }
             for (j = 0; j < dropdown.length; j++) {
                 container[j].style.display = "none";
             }
