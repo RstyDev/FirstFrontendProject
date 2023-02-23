@@ -133,9 +133,13 @@
 }
 
 img {
-    position: inherit;
     border-radius: 10%;
-    float: left;
+    float: middle;
+    z-index: 1;
+}
+
+#profile {
+    text-align: center;
 }
 
 p {

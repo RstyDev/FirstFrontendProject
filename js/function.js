@@ -13,6 +13,8 @@ var fecha;
 var xhr = new XMLHttpRequest();
 var url = 'https://randomuser.me/api/';
 xhr.open("GET", url, true);
+
+
 xhr.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         objx = JSON.parse(this.responseText);
@@ -102,7 +104,7 @@ xhr.onreadystatechange = function () {
             document.getElementById('parrafo').innerHTML = "Vivo en calle " + objx.results[0].location.street.name + " número " + objx.results[0].location.street.number + " ciudad de " + objx.results[0].location.city + ", " + objx.results[0].location.state + ", " + objx.results[0].location.country + ".";
         });
 
-        var img = document.createElement("img");
+        var img = document.getElementById("profileimg");
         img.className = "img-thumbnail"; //durante todo el proyecto busque trabajar en CSS solamente porque el enunciado no decía si debiamos usar solo CSS o bootstrap. En ésta instancia decidí poner en práctica algo con bootstrap también
         img.src = objx.results[0].picture.large;
         var src = document.getElementById("profile");
@@ -110,9 +112,23 @@ xhr.onreadystatechange = function () {
             img.height = 150;
             img.width = 150;
             img.style.borderRadius = "10%";
-            img.id = "profileimg"
+
         };
         src.appendChild(img);
+        document.getElementById("profileimg").addEventListener("click", function () {
+            document.getElementById('parrafo').innerHTML = "Mi nombre es " + obj.nombre + " " + obj.apellido + ", nacido en " + obj.pais + " el día " + obj.dia + " del mes " + obj.mes + " del año " + obj.anio + ".";
+            for (j = 0; j < dropdown.length; j++) {
+                container[j].style.display = "none";
+            }
+            for (k = 0; k < dropdown.length; k++) {
+                dropdown[k].classList.remove("active");
+            }
+            if (smallsize.matches) {
+                popupbtn.classList.remove("active");
+                popupContent[0].style.display = "none";
+            }
+        })
+
 
     }
     document.getElementById('naci').addEventListener("click", function () {
